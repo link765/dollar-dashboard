@@ -27,10 +27,10 @@ function Footer({updateTheme, theme, hasWeb3}: FooterProps) {
         <div style={{maxWidth: '1100px', marginLeft: 'auto', marginRight: 'auto'}}>
           <div style={{ padding: '2%', display: 'flex'}}>
             <div style={{ width: '50%', textAlign: 'left' }}>
-              <FooterLink icon={<i className="fab fa-github"/>} href={"https://www.github.com/emptysetsquad/dollar"}/>
-              <FooterLink icon={<i className="fab fa-twitter"/>} href={"https://www.twitter.com/emptysetsquad"}/>
-              <FooterLink icon={<i className="fab fa-medium"/>} href={"https://www.medium.com/@emptysetsquad"}/>
-              <FooterLink icon={<i className="fab fa-telegram"/>} href={"https://www.t.me/emptysetdollar"}/>
+              <FooterLink icon={<i className="fab fa-github"/>} href={"https://github.com/trongalaxy/GSD"}/>
+              <FooterLink icon={<i className="fab fa-twitter"/>} href={"https://twitter.com/galaxy_defi"}/>
+              <FooterLink icon={<i className="fab fa-medium"/>} href={"https://galaxy19001010.medium.com/"}/>
+              <FooterLink icon={<i className="fab fa-telegram"/>} href={"https://t.me/galaxy_defi"}/>
               {/*<FooterLink icon={<i className="fab fa-discord"/>} href={"https://discord.gg/vPws9Vp"}/>*/}
             </div>
             <div style={{ width: '45%', textAlign: 'right', height: '18px', marginTop: '15px', marginBottom: '15px'}}>
