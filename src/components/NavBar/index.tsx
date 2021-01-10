@@ -30,7 +30,7 @@ function NavBar({ hasWeb3, user, setUser }: NavbarProps) {
           <div style={{ display: 'flex', paddingTop: '24px' }}>
             <div style={{ width: '20%', textAlign: 'left' }}>
               <NavLink to="/" component={LinkBase} style={{ marginRight: '16px', height: '40px' }}>
-                <img src={logoUrl} height="40px" alt="Empty Set Dollar" />
+                <img src={require("../../assets/img/LOGO2.svg")} height="42px" alt="Galaxy Set Dollar" />
               </NavLink>
             </div>
             <div style={{ width: '60%', textAlign: 'center' }}>
