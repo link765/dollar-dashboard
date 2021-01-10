@@ -34,14 +34,15 @@ function NavBar({ hasWeb3, user, setUser }: NavbarProps) {
               </NavLink>
             </div>
             <div style={{ width: '60%', textAlign: 'center' }}>
-              <LinkButton title="DAO" to="/dao/" />
+              <LinkButton title="Home" to="/" />
+              <LinkButton title="Wallet" to="/dao/" />
               <LinkButton title="Liquidity" to="/pool/" />
               <LinkButton title="Regulation" to="/regulation/" />
               <LinkButton title="Governance" to="/governance/" />
               <LinkButton title="Trade" to="/trade/" />
               <LinkButton title="Coupons" to="/coupons/" />
             </div>
-            <div style={{ width: '20%', textAlign: 'right' }}>
+            <div className="nav-connect-btn" style={{ width: '20%', textAlign: 'right' }}>
               <ConnectButton hasWeb3={hasWeb3} user={user} setUser={setUser} />
             </div>
           </div>
@@ -68,11 +69,12 @@ function LinkButton({ title, to }: linkButtonProps) {
         marginLeft: '8px',
         marginRight: '8px',
         height: '40px',
-        opacity: 0.5,
+        opacity: 1,
+        color: '#FFFFFF'
       }}
-      activeStyle={{ opacity: 1 }}
+      activeStyle={{ color: '#FFF1C9' }}
     >
-      <span style={{ display: 'block', padding: '1%', fontSize: '17px' }}>{title}</span>
+      <span style={{ display: 'block', padding: '1%', fontSize: '17px', fontWeight: 'bold' }}>{title}</span>
     </NavLink>
   );
 }

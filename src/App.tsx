@@ -66,7 +66,7 @@ function App() {
       >
         <Main assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`} theme={theme} layout={false}>
           <NavBar hasWeb3={hasWeb3} user={user} setUser={setUser} />
-          <Layout>
+          <Layout className="root-container-page">
           {
             hasWeb3 ?
               <Switch>

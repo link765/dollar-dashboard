@@ -125,7 +125,7 @@ function CouponMarket({ user }: {user: string}) {
         redeemable={redeemable}
       />
 
-      <Header primary="Purchase" />
+      <Header className="static-header" primary="Purchase" />
 
       <PurchaseCoupons
         user={user}
@@ -135,8 +135,8 @@ function CouponMarket({ user }: {user: string}) {
       />
 
       <div style={{ display: 'flex' }}>
-        <Header primary="Coupons" />
-        <div style={{ marginLeft: 'auto', alignSelf: 'flex-end' }}>
+        <Header className="static-header" primary="Coupons" />
+        <div className="static-header-checkbox" style={{ marginLeft: 'auto', alignSelf: 'flex-end' }}>
           <CheckBox
             text="Hide Redeemed"
             onCheck={(checked) => {

@@ -15,7 +15,7 @@ type CouponMarketHeaderProps = {
 const CouponMarketHeader = ({
   debt, supply, coupons, premium, redeemable
 }: CouponMarketHeaderProps) => (
-  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', color: '#FFFFFF', alignItems: 'center' }}>
     <div style={{ flexBasis: '20%' }}>
       <BalanceBlock asset="Debt Ratio" balance={ownership(debt, supply)} suffix={"%"}/>
     </div>

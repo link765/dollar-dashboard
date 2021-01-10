@@ -29,7 +29,7 @@ function WithdrawDeposit({
   return (
     <Box heading="Stage">
       {allowance.comparedTo(MAX_UINT256) === 0 ?
-        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}
           <div style={{flexBasis: '32%'}}>
             <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"ESD"}/>
@@ -105,14 +105,14 @@ function WithdrawDeposit({
           </div>
         </div>
         :
-        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}
           <div style={{flexBasis: '32%'}}>
             <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"ESD"}/>
           </div>
-          <div style={{flexBasis: '35%'}}/>
+          <div style={{flexBasis: '43%'}}/>
           {/* Approve DAO to spend Døllar */}
-          <div style={{flexBasis: '33%', paddingTop: '2%'}}>
+          <div className="withdraw-deposit-btn" style={{flexBasis: '25%', paddingTop: '2%'}}>
             <Button
               wide
               icon={<IconCirclePlus />}

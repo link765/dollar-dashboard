@@ -108,14 +108,14 @@ function WithdrawDeposit({
           </div>
         </div>
         :
-        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}
           <div style={{flexBasis: '32%'}}>
             <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"UNI-V2"}/>
           </div>
-          <div style={{flexBasis: '35%'}}/>
+          <div style={{flexBasis: '43%'}}/>
           {/* Approve Pool to spend UNI-V2 */}
-          <div style={{flexBasis: '33%', paddingTop: '2%'}}>
+          <div className="withdraw-deposit-btn" style={{flexBasis: '25%', paddingTop: '2%'}}>
             <Button
               wide
               icon={<IconCirclePlus />}
@@ -131,5 +131,4 @@ function WithdrawDeposit({
     </Box>
   );
 }
-
 export default WithdrawDeposit;

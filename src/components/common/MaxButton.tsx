@@ -6,9 +6,9 @@ import {
 
 function MaxButton({ onClick }:{ onClick: Function }) {
   return (
-    <div style={{ padding: 3 }}>
+    <div style={{ textAlign: 'center' }}>
       <ButtonBase onClick={onClick}>
-        <span style={{ opacity: 0.5 }}> Max </span>
+        <span style={{ opacity: 1 }}> Max </span>
       </ButtonBase>
     </div>
   );

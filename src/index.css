@@ -11,3 +11,69 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#root {
+  background: url("./assets/img/bg.jpg") no-repeat;
+  background-size: 100%;
+}
+.nav-connect-btn button {
+  background: #F6F8FF;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #384E7E;
+  font-weight: bold;
+}
+.main-btn > div, .epoch-btn > div {
+  background: #F6F8FF;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.icon-header, .icon-header h1 {
+  color: #FFFFFF;
+  font-size: 32px;
+}
+.root-container-page .epCpTj {
+  background: #F6F8FF;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.root-container-page .epCpTj h1 {
+  color: #384E7E;
+  font-size: 20px;
+  padding-top: 24px;
+  border-bottom: none;
+}
+.pool-deposit .withdraw-deposit-btn button, .pool-deposit .jmvHXG, .un-bond-max button {
+  box-shadow: 6px 6px 16px 0px rgba(186, 202, 229, 0.8), -6px -6px 16px 0px rgba(242, 242, 242, 0.8);
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #384E7E;
+  font-weight: bold;
+  background: #F6F8FF;
+}
+.pool-deposit .cESYIM .grHNyV, .pool-deposit .jmvHXG .grHNyV {
+  color: #384E7E;
+  font-weight: bold;
+}
+.un-bond-max button {
+  width: 70px;
+  height: 38px;
+}
+.un-bond-input input {
+  background: #F6F8FF;
+  box-shadow: 6px 6px 16px 0px rgba(210, 218, 233, 0.8), -6px -6px 16px 0px rgba(241, 241, 241, 0.8);
+  border-radius: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #384E7E;
+  font-weight: bold;
+  font-size: 20px;
+}
+.un-bond-input > div > div {
+  color: #384E7E;
+  font-weight: bold;
+  font-size: 16px;
+  padding-right: 10px;
+}
+.static-header h1, .static-header-checkbox span {
+  color: #FFFFFF;
+}
+

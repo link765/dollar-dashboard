@@ -24,7 +24,7 @@ function status(accountStatus, unlocked) {
 const AccountPageHeader = ({
   accountESDBalance, accountESDSBalance, totalESDSSupply, accountStagedBalance, accountBondedBalance, accountStatus, unlocked
 }: AccountPageHeaderProps) => (
-  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', color: '#FFFFFF', alignItems: 'center' }}>
     <div style={{ flexBasis: '20%' }}>
       <BalanceBlock asset="Balance" balance={accountESDBalance} suffix={" ESD"}/>
     </div>

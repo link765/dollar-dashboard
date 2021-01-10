@@ -15,7 +15,7 @@ const TradePageHeader = ({
   const price = pairBalanceUSDC.dividedBy(pairBalanceESD);
 
   return (
-    <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+    <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', color: '#FFFFFF', alignItems: 'center' }}>
       <div style={{ flexBasis: '25%' }}>
         <BalanceBlock asset="ESD Price" balance={price} suffix={"USDC"}/>
       </div>

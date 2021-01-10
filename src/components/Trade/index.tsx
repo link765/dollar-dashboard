@@ -96,7 +96,7 @@ function MainButton({
   return (
     <LinkBase href={href} style={{ width: '100%' }}>
       <Box>
-        <div style={{ padding: 10, fontSize: 18 }}>
+        <div style={{ padding: 10, fontSize: 24, color: '#384E7E', fontWeight: 'bold' }}>
           {title}
         </div>
         <span style={{ fontSize: 48 }}>

@@ -24,7 +24,7 @@ function status(accountStatus, unlocked) {
 const PoolPageHeader = ({
   accountUNIBalance, accountBondedBalance, accountRewardedESDBalance, accountClaimableESDBalance, poolTotalBonded, accountPoolStatus, unlocked
 }: PoolPageHeaderProps) => (
-  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', color: '#FFFFFF' }}>
     <div style={{ flexBasis: '20%' }}>
       <BalanceBlock asset="Balance" balance={accountUNIBalance}  suffix={" UNI-V2"}/>
     </div>

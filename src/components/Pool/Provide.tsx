@@ -51,7 +51,7 @@ function Provide({
   return (
     <Box heading="Provide">
       {userUSDCAllowance.comparedTo(MAX_UINT256.dividedBy(2)) > 0 ?
-        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total rewarded */}
           <div style={{flexBasis: '32%'}}>
             <BalanceBlock asset="Rewarded" balance={rewarded} suffix={"ESD"} />
@@ -98,17 +98,16 @@ function Provide({
           </div>
         </div>
         :
-        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total rewarded */}
           <div style={{flexBasis: '32%'}}>
             <BalanceBlock asset="Rewarded" balance={rewarded} suffix={"ESD"} />
           </div>
-          <div style={{flexBasis: '33%'}}>
+          <div style={{flexBasis: '43%'}}>
             <BalanceBlock asset="USDC Balance" balance={userUSDCBalance} suffix={"USDC"} />
           </div>
-          <div style={{flexBasis: '2%'}}/>
           {/* Approve Pool to spend USDC */}
-          <div style={{flexBasis: '33%', paddingTop: '2%'}}>
+          <div className="withdraw-deposit-btn" style={{flexBasis: '25%', paddingTop: '2%'}}>
             <Button
               wide
               icon={<IconCirclePlus/>}

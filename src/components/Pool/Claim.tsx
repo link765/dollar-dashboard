@@ -24,16 +24,16 @@ function Claim({
 
   return (
     <Box heading="Claim">
-      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+      <div className="pool-deposit bond-un-bond" style={{display: 'flex', flexWrap: 'wrap'}}>
         {/* total Issued */}
-        <div style={{flexBasis: '32%'}}>
+        <div style={{flexBasis: '20%'}}>
           <BalanceBlock asset="Claimable" balance={claimable} suffix={"ESD"} />
         </div>
         {/* Deposit UNI-V2 into Pool */}
-        <div style={{flexBasis: '35%'}}/>
-        <div style={{flexBasis: '33%', paddingTop: '2%'}}>
+        <div style={{flexBasis: '20%'}}/>
+        <div style={{flexBasis: '60%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
-            <div style={{width: '60%', minWidth: '6em'}}>
+            <div className="un-bond-input" style={{width: '45%', minWidth: '6em'}}>
               <>
                 <BigNumberInput
                   adornment="ESD"
@@ -41,14 +41,16 @@ function Claim({
                   setter={setClaimAmount}
                   disabled={status !== 0}
                 />
-                <MaxButton
-                  onClick={() => {
-                    setClaimAmount(claimable);
-                  }}
-                />
               </>
             </div>
-            <div style={{width: '40%', minWidth: '6em'}}>
+            <div className="un-bond-max" style={{width: '15%', minWidth: '1em'}}>
+              <MaxButton
+                onClick={() => {
+                  setClaimAmount(claimable);
+                }}
+              />
+            </div>
+            <div className="withdraw-deposit-btn" style={{width: '40%', minWidth: '6em'}}>
               <Button
                 wide
                 icon={<IconArrowDown/>}

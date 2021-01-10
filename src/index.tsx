@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 import Moment from 'moment'
 import momentLocalizer from 'react-widgets-moment';
+import './index.css';
 
 Moment.locale('en')
 momentLocalizer()

@@ -52,8 +52,11 @@ function HomePage({user}: HomePageProps) {
   return (
     <>
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '68%' }} />
-        <div style={{ flexBasis: '30%', flexGrow: 1, marginRight: '2%', textAlign: 'right'}}>
+        <div style={{ flexBasis: '68%', display: 'flex' }}>
+          <img src={require("../../assets/img/logo.png")} alt="" style={{ margin: '0 20px' }} />
+          <span style={{ color: '#FFF1C9', fontSize: '28px', fontFamily: 'HYk2gj' }}>YNAMIC SET DOLLAR</span>
+        </div>
+        <div className="epoch-btn" style={{ flexBasis: '30%', flexGrow: 1, marginRight: '2%', textAlign: 'right'}}>
           <Box>
             <EpochBlock epoch={epochTime}/>
           </Box>
@@ -62,7 +65,7 @@ function HomePage({user}: HomePageProps) {
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%'  }}>
           <MainButton
-            title="DAO"
+            title="Wallet"
             description="Earn rewards for governing"
             icon={<i className="fas fa-dot-circle"/>}
             onClick={() => {
@@ -143,9 +146,9 @@ function MainButton({
   title, description, icon, onClick, tag,
 }:MainButtonPropx) {
   return (
-    <LinkBase onClick={onClick} style={{ width: '100%' }}>
+    <LinkBase className="main-btn" onClick={onClick} style={{ width: '100%' }}>
       <Box>
-        <div style={{ padding: 10, fontSize: 18 }}>
+        <div style={{ padding: 10, fontSize: 24, fontWeight: 'bold', color: '#384E7E' }}>
           {title}
           {tag ? <Tag>{tag}</Tag> : <></>}
         </div>

@@ -88,14 +88,14 @@ function PurchaseCoupons({
           </div>
         </div>
         :
-        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* User balance */}
-          <div style={{flexBasis: '30%'}}>
+          <div style={{flexBasis: '32%'}}>
             <BalanceBlock asset={`Døllar Balance`} balance={balance}/>
           </div>
-          <div style={{flexBasis: '40%'}}/>
+          <div style={{flexBasis: '43%'}}/>
           {/* Approve DAO to spend Døllar */}
-          <div style={{flexBasis: '30%', paddingTop: '2%'}}>
+          <div className="withdraw-deposit-btn" style={{flexBasis: '25%', paddingTop: '2%'}}>
             <Button
               wide
               icon={<IconCirclePlus/>}
