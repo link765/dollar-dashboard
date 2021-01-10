@@ -38,7 +38,7 @@ function NavBar({ hasWeb3, user, setUser }: NavbarProps) {
               <LinkButton title="Wallet" to="/dao/" />
               <LinkButton title="Liquidity" to="/pool/" />
               <LinkButton title="Regulation" to="/regulation/" />
-              <LinkButton title="Governance" to="/governance/" />
+              {/*<LinkButton title="Governance" to="/governance/" />*/}
               <LinkButton title="Trade" to="/trade/" />
               <LinkButton title="Coupons" to="/coupons/" />
             </div>
@@ -74,7 +74,7 @@ function LinkButton({ title, to }: linkButtonProps) {
       }}
       activeStyle={{ color: '#FFF1C9' }}
     >
-      <span style={{ display: 'block', padding: '1%', fontSize: '17px', fontWeight: 'bold' }}>{title}</span>
+      <span style={{ display: 'block', padding: '1%', fontSize: '22px', fontWeight: 'bold' }}>{title}</span>
     </NavLink>
   );
 }

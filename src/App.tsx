@@ -75,8 +75,8 @@ function App() {
                 <Route path="/epoch/"><EpochDetail user={user}/></Route>
                 <Route path="/coupons/:override"><CouponMarket user={user}/></Route>
                 <Route path="/coupons/"><CouponMarket user={user}/></Route>
-                <Route path="/governance/candidate/:candidate"><Candidate user={user}/></Route>
-                <Route path="/governance/"><Governance user={user}/></Route>
+                {/*<Route path="/governance/candidate/:candidate"><Candidate user={user}/></Route>*/}
+                {/*<Route path="/governance/"><Governance user={user}/></Route>*/}
                 <Route path="/trade/"><Trade user={user}/></Route>
                 <Route path="/regulation/"><Regulation user={user}/></Route>
                 <Route path="/pool/:override"><Pool user={user}/></Route>

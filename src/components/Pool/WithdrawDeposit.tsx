@@ -33,7 +33,7 @@ function WithdrawDeposit({
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}
           <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"UNI-V2"}/>
+            <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"HMDX"}/>
           </div>
           {/* Deposit UNI-V2 into Pool */}
           <div style={{flexBasis: '33%', paddingTop: '2%'}}>
@@ -41,7 +41,7 @@ function WithdrawDeposit({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
-                    adornment="UNI-V2"
+                    adornment="HMDX"
                     value={depositAmount}
                     setter={setDepositAmount}
                     disabled={status !== 0}
@@ -77,7 +77,7 @@ function WithdrawDeposit({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
-                    adornment="UNI-V2"
+                    adornment="HMDX"
                     value={withdrawAmount}
                     setter={setWithdrawAmount}
                     disabled={status !== 0}
@@ -111,7 +111,7 @@ function WithdrawDeposit({
         <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}
           <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"UNI-V2"}/>
+            <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"HMDX"}/>
           </div>
           <div style={{flexBasis: '43%'}}/>
           {/* Approve Pool to spend UNI-V2 */}

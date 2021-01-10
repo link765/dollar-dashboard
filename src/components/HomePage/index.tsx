@@ -53,8 +53,8 @@ function HomePage({user}: HomePageProps) {
     <>
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         <div style={{ flexBasis: '68%', display: 'flex' }}>
-          <img src={require("../../assets/img/logo.png")} alt="" style={{ margin: '0 20px' }} />
-          <span style={{ color: '#FFF1C9', fontSize: '28px', fontFamily: 'HYk2gj' }}>YNAMIC SET DOLLAR</span>
+          <img src={require("../../assets/img/LOGO2.svg")} alt="" style={{ margin: '0 20px',height:'42px' }} />
+          <span style={{ color: '#FFF1C9', fontSize: '28px', fontFamily: 'HYk2gj' }}>GALAXY SET DOLLAR</span>
         </div>
         <div className="epoch-btn" style={{ flexBasis: '30%', flexGrow: 1, marginRight: '2%', textAlign: 'right'}}>
           <Box>

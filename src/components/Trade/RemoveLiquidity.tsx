@@ -55,7 +55,7 @@ function RemoveLiquidity({
           <div style={{ display: 'flex' }}>
             <div style={{ width: '35%', marginRight: '5%' }}>
               <BigNumberInput
-                adornment="UNI-V2"
+                adornment="HMDX"
                 value={withdrawAmountUNI}
                 setter={onChangeWithdrawAmountUNI}
               />
@@ -65,8 +65,8 @@ function RemoveLiquidity({
             </div>
             <div style={{ width: '35%', marginRight: '5%' }}>
               <>
-                <PriceSection label="You get " amt={estimatedUSDCReceived} symbol=" USDC" />
-                <PriceSection label="+ " amt={estimatedESDReceived} symbol=" ESD" />
+                <PriceSection label="You get " amt={estimatedUSDCReceived} symbol=" HUSD" />
+                <PriceSection label="+ " amt={estimatedESDReceived} symbol=" GSD" />
               </>
             </div>
             <div style={{ width: '30%' }}>

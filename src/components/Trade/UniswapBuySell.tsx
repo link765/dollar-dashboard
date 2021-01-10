@@ -58,7 +58,7 @@ function UniswapBuySell({
       <div style={{ display: 'flex' }}>
         {/* total Issued */}
         <div style={{ width: '30%' }}>
-          <BalanceBlock asset="Døllar Balance" balance={userBalanceESD} suffix={" ESD"}/>
+          <BalanceBlock asset="Døllar Balance" balance={userBalanceESD} suffix={" GSD"}/>
         </div>
         {/* Buy Token from Uniswap */}
         <div style={{ width: '32%', paddingTop: '2%' }}>
@@ -66,7 +66,7 @@ function UniswapBuySell({
             <div style={{ width: '60%' }}>
               <>
                 <BigNumberInput
-                  adornment="ESD"
+                  adornment="GSD"
                   value={buyAmount}
                   setter={(value) => {
                     setBuyAmount(value);
@@ -89,7 +89,7 @@ function UniswapBuySell({
               />
             </div>
           </div>
-          <PriceSection label="Cost: " amt={cost} symbol=" USDC" />
+          <PriceSection label="Cost: " amt={cost} symbol=" HUSD" />
         </div>
         <div style={{ width: '6%' }} />
         {/* Sell Token on Uniswap */}
@@ -98,7 +98,7 @@ function UniswapBuySell({
             <div style={{ width: '60%' }}>
               <>
                 <BigNumberInput
-                  adornment="ESD"
+                  adornment="GSD"
                   value={sellAmount}
                   setter={(value) => {
                     setSellAmount(value);
@@ -111,7 +111,7 @@ function UniswapBuySell({
                     updateProceeds(userBalanceESD);
                   }}
                 />
-                <PriceSection label="Proceeds: " amt={proceeds} symbol=" USDC"/>
+                <PriceSection label="Proceeds: " amt={proceeds} symbol=" HUSD"/>
               </>
             </div>
             <div style={{ width: '40%' }}>

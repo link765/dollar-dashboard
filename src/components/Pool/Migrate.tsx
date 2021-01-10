@@ -33,7 +33,7 @@ function Migrate({
         <div style={{flexBasis: '32%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
             <div style={{width: '60%'}}>
-              <BalanceBlock asset="Bonded" balance={bonded} suffix={"UNI-V2"} />
+              <BalanceBlock asset="Bonded" balance={bonded} suffix={"HMDX"} />
               <Button
                 wide
                 icon={<IconCircleMinus/>}
@@ -54,7 +54,7 @@ function Migrate({
         <div style={{flexBasis: '32%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
             <div style={{width: '60%'}}>
-              <BalanceBlock asset="Staged" balance={staged} suffix={"UNI-V2"} />
+              <BalanceBlock asset="Staged" balance={staged} suffix={"HMDX"} />
               <Button
                 wide
                 icon={<IconCircleMinus/>}
@@ -75,7 +75,7 @@ function Migrate({
         <div style={{flexBasis: '32%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
             <div style={{width: '60%'}}>
-              <BalanceBlock asset="Claimable" balance={claimable} suffix={"ESD"} />
+              <BalanceBlock asset="Claimable" balance={claimable} suffix={"GSD"} />
               <Button
                 wide
                 icon={<IconArrowDown/>}

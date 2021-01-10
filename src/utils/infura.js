@@ -351,11 +351,11 @@ export const getCouponEpochs = async (dao, account) => {
   const daoContract = new web3.eth.Contract(daoAbi, dao);
   const purchaseP = daoContract.getPastEvents('CouponPurchase', {
     filter: { account },
-    fromBlock: 0,
+    fromBlock: 1060418,
   });
   const transferP = daoContract.getPastEvents('CouponTransfer', {
     filter: { to: account },
-    fromBlock: 0,
+    fromBlock: 1060418,
   });
   const [bought, given] = await Promise.all([purchaseP, transferP]);
   const events = bought.map((e) => ({epoch: e.returnValues.epoch, amount: e.returnValues.couponAmount}))
@@ -390,7 +390,7 @@ export const getCouponEpochs = async (dao, account) => {
 export const getAllProposals = async (dao) => {
   const daoContract = new web3.eth.Contract(daoAbi, dao);
   const payload = (await daoContract.getPastEvents('Proposal', {
-    fromBlock: 0,
+    fromBlock: 1060418,
   })).map((event) => {
     const prop = event.returnValues;
     prop.blockNumber = event.blockNumber;
@@ -406,9 +406,9 @@ export const getAllProposals = async (dao) => {
  */
 export const getAllRegulations = async (dao) => {
   const daoContract = new web3.eth.Contract(daoAbi, dao);
-  const increaseP = daoContract.getPastEvents('SupplyIncrease', { fromBlock: 0 });
-  const decreaseP = daoContract.getPastEvents('SupplyDecrease', { fromBlock: 0 });
-  const neutralP = daoContract.getPastEvents('SupplyNeutral', { fromBlock: 0 });
+  const increaseP = daoContract.getPastEvents('SupplyIncrease', { fromBlock: 1060418 });
+  const decreaseP = daoContract.getPastEvents('SupplyDecrease', { fromBlock: 1060418 });
+  const neutralP = daoContract.getPastEvents('SupplyNeutral', { fromBlock: 1060418 });
 
   const [increase, decrease, neutral] = await Promise.all([increaseP, decreaseP, neutralP]);
 
@@ -560,9 +560,9 @@ export const getPoolFluidUntil = async (pool, account) => {
   const blockNumber = await web3.eth.getBlockNumber();
   const fromBlock = blockNumber - (POOL_EXIT_LOCKUP_EPOCHS + 1) * 8640;
   const bondP = poolContract.getPastEvents('Bond', {
-    filter: {account: account}, fromBlock: fromBlock });
+    filter: {account: account}, fromBlock: 1060418 });
   const unbondP = poolContract.getPastEvents('Unbond', {
-    filter: {account: account}, fromBlock: fromBlock });
+    filter: {account: account}, fromBlock: 1060418 });
 
   const [bond, unbond] = await Promise.all([bondP, unbondP]);
   const events = bond.map((e) => e.returnValues)

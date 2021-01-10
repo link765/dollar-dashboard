@@ -34,7 +34,7 @@ function MintUSDC({
           <div style={{display: 'flex'}}>
             <div style={{width: '60%'}}>
               <BigNumberInput
-                adornment="USDC"
+                adornment="HUSD"
                 value={mintAmount}
                 setter={setMintAmount}
               />

@@ -27,7 +27,7 @@ function UniswapApproveCollateral({
           <Button
             wide
             icon={<IconCirclePlus />}
-            label="Unlock ESD"
+            label="Unlock GSD"
             onClick={() => {
               approve(ESD.addr, UniswapV2Router02);
             }}

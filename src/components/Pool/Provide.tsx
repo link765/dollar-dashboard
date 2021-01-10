@@ -54,10 +54,10 @@ function Provide({
         <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total rewarded */}
           <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Rewarded" balance={rewarded} suffix={"ESD"} />
+            <BalanceBlock asset="Rewarded" balance={rewarded} suffix={"GSD"} />
           </div>
           <div style={{flexBasis: '33%'}}>
-            <BalanceBlock asset="USDC Balance" balance={userUSDCBalance} suffix={"USDC"} />
+            <BalanceBlock asset="USDC Balance" balance={userUSDCBalance} suffix={"HUSD"} />
           </div>
           <div style={{flexBasis: '2%'}}/>
           {/* Provide liquidity using Pool rewards */}
@@ -66,12 +66,12 @@ function Provide({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
-                    adornment="ESD"
+                    adornment="GSD"
                     value={provideAmount}
                     setter={onChangeAmountESD}
                     disabled={status === 1}
                   />
-                  <PriceSection label="Requires " amt={usdcAmount} symbol=" USDC"/>
+                  <PriceSection label="Requires " amt={usdcAmount} symbol=" HUSD"/>
                   <MaxButton
                     onClick={() => {
                       onChangeAmountESD(rewarded);
@@ -101,10 +101,10 @@ function Provide({
         <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total rewarded */}
           <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Rewarded" balance={rewarded} suffix={"ESD"} />
+            <BalanceBlock asset="Rewarded" balance={rewarded} suffix={"GSD"} />
           </div>
           <div style={{flexBasis: '43%'}}>
-            <BalanceBlock asset="USDC Balance" balance={userUSDCBalance} suffix={"USDC"} />
+            <BalanceBlock asset="USDC Balance" balance={userUSDCBalance} suffix={"HUSD"} />
           </div>
           {/* Approve Pool to spend USDC */}
           <div className="withdraw-deposit-btn" style={{flexBasis: '25%', paddingTop: '2%'}}>
@@ -121,7 +121,7 @@ function Provide({
         </div>
       }
       <div style={{width: '100%', paddingTop: '2%', textAlign: 'center'}}>
-        <span style={{ opacity: 0.5 }}> Zap your rewards directly to LP by providing more USDC </span>
+        <span style={{ opacity: 0.5 }}> Zap your rewards directly to LP by providing more HUSD </span>
       </div>
     </Box>
   );

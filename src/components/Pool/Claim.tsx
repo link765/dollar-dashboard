@@ -27,7 +27,7 @@ function Claim({
       <div className="pool-deposit bond-un-bond" style={{display: 'flex', flexWrap: 'wrap'}}>
         {/* total Issued */}
         <div style={{flexBasis: '20%'}}>
-          <BalanceBlock asset="Claimable" balance={claimable} suffix={"ESD"} />
+          <BalanceBlock asset="Claimable" balance={claimable} suffix={"GSD"} />
         </div>
         {/* Deposit UNI-V2 into Pool */}
         <div style={{flexBasis: '20%'}}/>
@@ -36,7 +36,7 @@ function Claim({
             <div className="un-bond-input" style={{width: '45%', minWidth: '6em'}}>
               <>
                 <BigNumberInput
-                  adornment="ESD"
+                  adornment="GSD"
                   value={claimAmount}
                   setter={setClaimAmount}
                   disabled={status !== 0}

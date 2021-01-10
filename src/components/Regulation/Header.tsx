@@ -45,7 +45,7 @@ const RegulationHeader = ({
               heading={`∅${formatMoney(totalSupply.toNumber())}`}
               items={[
                 { item: 'DAO', percentage: +(ownership(daoTotalSupply, totalSupply).toNumber().toFixed(2)) },
-                { item: 'Uniswap', percentage: +(ownership(poolTotalSupply, totalSupply).toNumber().toFixed(2)) },
+                { item: 'HecoSwap', percentage: +(ownership(poolTotalSupply, totalSupply).toNumber().toFixed(2)) },
                 { item: 'Circulating', percentage: +(ownership(circulatingSupply, totalSupply).toNumber().toFixed(2)) },
               ]}
             />
@@ -64,7 +64,7 @@ const RegulationHeader = ({
           </Box>
         </div>
         <div style={{ flexBasis: '25%' }}>
-          <Box heading="Uniswap Breakdown">
+          <Box heading="HecoSwap Breakdown">
             <Distribution
               heading={`∅${formatMoney(poolTotalSupply.toNumber())}`}
               items={[

@@ -44,7 +44,7 @@ function PurchaseCoupons({
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* User balance */}
           <div style={{flexBasis: '30%'}}>
-            <BalanceBlock asset={`Balance`} balance={balance} suffix={" ESD"}/>
+            <BalanceBlock asset={`Balance`} balance={balance} suffix={" GSD"}/>
           </div>
           <div style={{flexBasis: '38%'}}/>
           {/* Purchase coupons */}
@@ -53,7 +53,7 @@ function PurchaseCoupons({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
-                    adornment="ESD"
+                    adornment="GSD"
                     value={purchaseAmount}
                     setter={(value) => {
                       setPurchaseAmount(value);

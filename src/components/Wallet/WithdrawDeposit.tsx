@@ -32,7 +32,7 @@ function WithdrawDeposit({
         <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}
           <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"ESD"}/>
+            <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"GSD"}/>
           </div>
           {/* Deposit Døllar into DAO */}
           <div style={{flexBasis: '33%', paddingTop: '2%'}}>
@@ -40,7 +40,7 @@ function WithdrawDeposit({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
-                    adornment="ESD"
+                    adornment="GSD"
                     value={depositAmount}
                     setter={setDepositAmount}
                     disabled={status !== 0}
@@ -75,7 +75,7 @@ function WithdrawDeposit({
               <div style={{width: '60%', minWidth: '7em'}}>
                 <>
                   <BigNumberInput
-                    adornment="ESD"
+                    adornment="GSD"
                     value={withdrawAmount}
                     setter={setWithdrawAmount}
                     disabled={status !== 0}
@@ -108,7 +108,7 @@ function WithdrawDeposit({
         <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}
           <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"ESD"}/>
+            <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"GSD"}/>
           </div>
           <div style={{flexBasis: '43%'}}/>
           {/* Approve DAO to spend Døllar */}

@@ -55,7 +55,7 @@ function UniswapPool({ user }: {user: string}) {
         <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%'  }}>
           <MainButton
             title="Info"
-            description="View ESD-USDC pool stats."
+            description="View GSD-HUSD pool stats."
             icon={<i className="fas fa-chart-area"/>}
             href={"https://uniswap.info/pair/0x88ff79eb2bc5850f27315415da8685282c7610f9"}
           />

@@ -94,7 +94,7 @@ function AddLiquidity({
             <div style={{ width: '35%', marginRight: '5%' }}>
               <>
                 <BigNumberInput
-                  adornment="ESD"
+                  adornment="GSD"
                   value={amountESD}
                   setter={onChangeAmountESD}
                 />
@@ -107,7 +107,7 @@ function AddLiquidity({
             </div>
             <div style={{ width: '35%', marginRight: '5%' }}>
               <BigNumberInput
-                adornment="USDC"
+                adornment="HUSD"
                 value={amountUSDC}
                 setter={onChangeAmountUSDC}
               />

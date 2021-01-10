@@ -31,7 +31,7 @@ function BondUnbond({
       <div className="pool-deposit bond-un-bond" style={{display: 'flex', flexWrap: 'wrap'}}>
         {/* Total bonded */}
         <div style={{flexBasis: '20%', paddingTop: '32px'}}>
-          <BalanceBlock asset="Bonded" balance={bonded} suffix={"UNI-V2"} />
+          <BalanceBlock asset="Bonded" balance={bonded} suffix={"HMDX"} />
         </div>
         {/* Exit lockup */}
         <div style={{flexBasis: '20%', paddingTop: '32px'}}>
@@ -44,7 +44,7 @@ function BondUnbond({
               <div className="un-bond-input" style={{width: '45%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
-                    adornment="UNI-V2"
+                    adornment="HMDX"
                     value={bondAmount}
                     setter={setBondAmount}
                   />
@@ -82,7 +82,7 @@ function BondUnbond({
               <div className="un-bond-input" style={{width: '45%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
-                    adornment="UNI-V2"
+                    adornment="HMDX"
                     value={unbondAmount}
                     setter={setUnbondAmount}
                   />
