@@ -27,7 +27,7 @@ const TradePageHeader = ({
       </div>
       <div style={{ flexBasis: '25%' }}>
         <>
-          <AddressBlock label="HecoSwap Contract" address={uniswapPair} />
+          <AddressBlock label="HecoSwap Pair Contract" address={uniswapPair} />
         </>
       </div>
     </div>
