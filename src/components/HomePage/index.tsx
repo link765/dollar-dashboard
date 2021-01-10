@@ -5,8 +5,8 @@ import {
 } from '@aragon/ui';
 import EpochBlock from "../common/EpochBlock";
 
-function epochformatted() {
-  const epochStart = 1599148800;
+async function epochformatted() {
+  const epochStart = 1610452800;
   const epochPeriod = 8 * 60 * 60;
   const hour = 60 * 60;
   const minute = 60;
@@ -19,7 +19,8 @@ function epochformatted() {
   epochRemainder -= epochHour * hour;
   const epochMinute = Math.floor(epochRemainder / minute);
   epochRemainder -= epochMinute * minute;
-  return `${epoch}-0${epochHour}:${epochMinute > 9 ? epochMinute : "0" + epochMinute.toString()}:${epochRemainder > 9 ? epochRemainder : "0" + epochRemainder.toString()}`;
+  //return `${epoch}-0${epochHour}:${epochMinute > 9 ? epochMinute : "0" + epochMinute.toString()}:${epochRemainder > 9 ? epochRemainder : "0" + epochRemainder.toString()}`;
+  return `0-00:00:00`;
 }
 
 type HomePageProps = {
@@ -36,7 +37,7 @@ function HomePage({user}: HomePageProps) {
 
     async function updateUserInfo() {
       if (!isCancelled) {
-        setEpochTime(epochformatted())
+        setEpochTime(await epochformatted())
       }
     }
     updateUserInfo();
