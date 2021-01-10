@@ -8,7 +8,8 @@
     <link rel="apple-touch-icon" type="image/png"
           href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png"/>
     <meta name="apple-mobile-web-app-title" content="CodePen">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon"
           href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"/>
 
@@ -28,6 +29,10 @@
         @font-face {
             font-family: Avenir;
             src: url('tff/Avenir-Medium-woff-7.ttf');
+        }
+
+        html {
+            font-size: 16px;
         }
 
         body {
@@ -62,17 +67,18 @@
             display: flex;
             flex-flow: column;
             align-items: center;
+            width: 100%;
         }
 
         .logo {
             position: absolute;
             color: #fff;
-            font-size: 16px;
+            font-size: 1rem;
             text-align: center;
             line-height: 1.5;
-            top: 48px;
+            top: 3rem;
             left: calc(100%);
-            transform: translate(calc(-100% - 48px));
+            transform: translate(calc(-100% - 3rem));
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -87,16 +93,77 @@
             text-align: left;
             line-height: 1.5;
             top: 100%;
-            transform: translate(0, calc(-100% - 40px));
+            transform: translate(0, calc(-100% - 2.5rem));
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
             cursor: default;
             display: flex;
-            margin-left: 60px;
+            margin-left: 4rem;
             justify-content: center;
-            font-size: 14px;
+            font-size: 0.85rem;
+        }
+
+        @media screen and (max-width: 400px) {
+            html {
+                font-size: 12px;
+            }
+            .by{
+                margin-left: 1rem;
+                transform: translate(0, calc(-100% - 1rem));
+            }
+
+            .logo{
+                top: 1rem;
+                transform: translate(calc(-100% - 1rem));
+            }
+
+        }
+        @media screen and (min-width: 400px) and (max-width: 600px){
+            html {
+                font-size: 13px;
+            }
+            .logo{
+                top: 1.5rem;
+                transform: translate(calc(-100% - 1.75rem));
+            }
+
+            .by{
+                margin-left: 2rem;
+                transform: translate(0, calc(-100% - 1.5rem));
+            }
+
+
+        }
+        @media screen and (min-width: 600px) and (max-width: 800px){
+            html {
+                font-size: 14px;
+            }
+            .logo{
+                top: 1.5rem;
+                transform: translate(calc(-100% - 1.75rem));
+            }
+
+            .by{
+                margin-left: 2rem;
+                transform: translate(0, calc(-100% - 1.5rem));
+            }
+        }
+        @media screen and (min-width: 800px) and (max-width: 1200px){
+            html {
+                font-size: 15px;
+            }
+
+            .logo{
+                top: 1.75rem;
+                transform: translate(calc(-100% - 2.25rem));
+            }
+
+            .by{
+                margin-left: 3rem;
+                transform: translate(0, calc(-100% - 2rem));
+            }
         }
 
         #credits {
@@ -132,45 +199,53 @@
 <div class="world"></div>
 <div class="haiku">
     <div style="
-        font-size: 56px;
+        font-size: 3.5rem;
         font-weight: 800;
         color: #FFFFFF;
-        line-height: 76px;">
+        line-height: 4.75rem;">
         Galaxy Lab
     </div>
     <div style="
         margin-top: 16px;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: 500;
         color: #FFFFFF;
-        line-height: 33px;">Start your first algorithmic stablecoin！</div>
+        line-height: 2rem;">Start your first algorithmic stablecoin！
+    </div>
+    <div id="countDown" style="
+        margin-top: 16px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #FFFFFF;
+        line-height: 2rem;">Start your first algorithmic stablecoin！
+    </div>
     <div style="
-        width: 271px;
-        height: 60px;
+        width: 17rem;
+        height: 3.75rem;
         background: #FFF8E7;
         border-radius: 4px;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-weight: 800;
         color: #F17E00;
         line-height: 27px;
         justify-content: center;
         align-items: center;
         display: flex;
-        margin-top: 56px;
+        margin-top: 32px;
 ">
         <span>Launch GSD</span>
     </div>
 </div>
 <div class="logo">
-    <img style="width: 163px;height: 20px;margin-right: 16px" src="img/Heco_logo_white.png" />
-    <span >&</span>
-    <img style="width: 90px;height: 28px;margin-left: 16px" src="img/Tron.png" />
+    <img style="width: 10rem;height: 1.25rem;margin-right: 16px" src="img/Heco_logo_white.png"/>
+    <span>&</span>
+    <img style="width: 5.625rem;height: 1.75rem;margin-left: 16px" src="img/Tron.png"/>
 </div>
 <div class="by">
-    <img style="width: 40px;height: 40px;margin-right: 12px" src="img/by.png" />
+    <img style="width: 2.5rem;height: 2.5rem;margin-right: 12px" src="img/by.png"/>
     <div style="display: flex; flex-flow: column">
         <span>Mode with by ❤️</span>
-        <span>Trongalaxy.finance</span>
+        <span>TronGalaxy.finance</span>
     </div>
 </div>
 
@@ -242,6 +317,8 @@
 
 		gl_FragColor = vec4(col, 1.0);
 	}
+
+
 
 
 </script>
@@ -333,6 +410,8 @@
 
 		gl_Position = projectionMatrix * modelViewMatrix * vec4 ( finalPos, 1.0);
 	}
+
+
 
 
 </script>
@@ -481,6 +560,29 @@
     //# sourceURL=pen.js
 </script>
 
+<script>
+    let countDown = document.getElementById('countDown');
+    let endTime = new Date("2021-01-12 20:00:00").getTime();
+    setInterval(function () {
+        let now = new Date().getTime();
+        let leftTime = endTime - now;
+
+        let d = '--', h = '--', m = '--', s = '--';
+
+        if (leftTime >= 0) {
+            d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
+            h = Math.floor(leftTime / 1000 / 60 / 60 % 24);
+            m = Math.floor(leftTime / 1000 / 60 % 60);
+            s = Math.floor(leftTime / 1000 % 60);
+        }
+        countDown.innerHTML = format(d) + ':'
+            + format(h) + ':' + format(m) + ':' + format(s);
+    }, 1000);
+
+    function format(num) {
+        return num.toString().padStart(2, '0');
+    }
+</script>
 
 </body>
 
