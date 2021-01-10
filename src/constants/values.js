@@ -6,4 +6,4 @@ export const GOVERNANCE_QUORUM = new BigNumber('0.20');
 export const GOVERNANCE_PROPOSAL_THRESHOLD = new BigNumber('0.005');
 export const COUPON_EXPIRATION = 360
 export const DAO_EXIT_LOCKUP_EPOCHS = 36
-export const POOL_EXIT_LOCKUP_EPOCHS = 12
+export const POOL_EXIT_LOCKUP_EPOCHS = 18
