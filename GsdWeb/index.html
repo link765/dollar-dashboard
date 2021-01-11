@@ -6,16 +6,15 @@
     <meta charset="UTF-8">
 
     <link rel="apple-touch-icon" type="image/png"
-          href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png"/>
+        href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
     <meta name="apple-mobile-web-app-title" content="CodePen">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
-    <link rel="shortcut icon" type="image/x-icon"
-          href="/img/by.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/by.png" />
 
     <link rel="mask-icon" type=""
-          href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
-          color="#111"/>
+        href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111" />
 
 
     <title>GalaxyLab</title>
@@ -31,13 +30,38 @@
             src: url('tff/Avenir-Medium-woff-7.ttf');
         }
 
+        @font-face {
+            font-family: zeroa;
+            src: url('tff/0.ttf');
+        }
+
+        @font-face {
+            font-family: fontaven;
+            src: url('tff/px_sans_nouveaux.ttf');
+        }
+
+        @font-face {
+            font-family: W95FA1;
+            src: url('tff/W95FA/W95FA.otf');
+        }
+
+        @font-face {
+            font-family: W95FA2;
+            src: url('tff/W95FA/w95fa.woff');
+        }
+
+        @font-face {
+            font-family: W95FA3;
+            src: url('tff/W95FA/w95fa.woff2');
+        }
+
         html {
             font-size: 16px;
         }
 
         body {
             overflow: hidden;
-            font-family: Avenir;
+            /* font-family: Avenir; */
         }
 
         canvas {
@@ -109,58 +133,64 @@
             html {
                 font-size: 12px;
             }
-            .by{
+
+            .by {
                 margin-left: 1rem;
                 transform: translate(0, calc(-100% - 1rem));
             }
 
-            .logo{
+            .logo {
                 top: 1rem;
                 transform: translate(calc(-100% - 1rem));
             }
 
         }
-        @media screen and (min-width: 400px) and (max-width: 600px){
+
+        @media screen and (min-width: 400px) and (max-width: 600px) {
             html {
                 font-size: 13px;
             }
-            .logo{
+
+            .logo {
                 top: 1.5rem;
                 transform: translate(calc(-100% - 1.75rem));
             }
 
-            .by{
+            .by {
                 margin-left: 2rem;
                 transform: translate(0, calc(-100% - 1.5rem));
             }
 
 
         }
-        @media screen and (min-width: 600px) and (max-width: 800px){
+
+        @media screen and (min-width: 600px) and (max-width: 800px) {
             html {
                 font-size: 14px;
             }
-            .logo{
+
+            .logo {
                 top: 1.5rem;
                 transform: translate(calc(-100% - 1.75rem));
             }
 
-            .by{
+            .by {
                 margin-left: 2rem;
                 transform: translate(0, calc(-100% - 1.5rem));
             }
         }
-        @media screen and (min-width: 800px) and (max-width: 1200px){
+
+        @media screen and (min-width: 800px) and (max-width: 1200px) {
             html {
                 font-size: 15px;
             }
 
-            .logo{
+            .logo {
                 top: 1.75rem;
                 transform: translate(calc(-100% - 2.25rem));
             }
 
-            .by{
+            .by {
                 margin-left: 3rem;
                 transform: translate(0, calc(-100% - 2rem));
             }
@@ -196,60 +226,73 @@
 </head>
 
 <body translate="no">
-<div class="world"></div>
-<div class="haiku">
-    <div style="
+    <div class="world"></div>
+    <div class="haiku">
+        <div style="
         font-size: 3.5rem;
         font-weight: 800;
         color: #FFFFFF;
-        line-height: 4.75rem;">
-        Galaxy Lab
-    </div>
-    <div style="
+        line-height: 4.75rem;
+        display: flex;
+        ">
+            <div style="margin-left: 13%;margin-right: -16%;">
+                <img src="img/logo.png" alt="">
+            </div>
+            <div style='float: left; margin-top: 39px; width: 20rem;font-family: W95FA1;'>
+                Galaxy Lab
+            </div>
+        </div>
+        <div style="
         margin-top: 16px;
         font-size: 1.5rem;
         font-weight: 500;
         color: #FFFFFF;
-        line-height: 2rem;">Start your first algorithmic stablecoin！
-    </div>
-    <div id="countDown" style="
-        margin-top: 16px;
-        font-size: 2rem;
-        font-weight: 500;
-        color: #FFFFFF;
-        line-height: 2rem;">Start your first algorithmic stablecoin！
-    </div>
-    <div style="
+        line-height: 2rem;
+        padding-left: 4%;
+        font-family: W95FA1;
+        ">Start your first algorithmic stablecoin！
+        </div>
+
+        <div style="
         width: 17rem;
         height: 3.75rem;
-        background: #FFF8E7;
+        background: #c8c8c8;
         border-radius: 4px;
         font-size: 1.25rem;
-        font-weight: 800;
-        color: #F17E00;
-        line-height: 27px;
-        justify-content: center;
-        align-items: center;
-        display: flex;
+        font-weight: 900;
+        color: #404057;
         margin-top: 32px;
+        margin-left: 3%;
 ">
-        <a href="https://gsd.trongalaxy.finance/" style="color:  #F17E00;text-decoration: unset;">Launch GSD</a>
-    </div>
-</div>
-<div class="logo">
-    <img style="width: 10rem;height: 1.25rem;margin-right: 16px" src="img/Heco_logo_white.png"/>
-    <span>&</span>
-    <img style="width: 5.625rem;height: 1.75rem;margin-left: 16px" src="img/Tron.png"/>
-</div>
-<div class="by">
-    <img style="width: 2.5rem;height: 2.5rem;margin-right: 12px" src="img/by.png"/>
-    <div style="display: flex; flex-flow: column">
-        <span>Made with ❤️ by</span>
-        <span>TronGalaxy.finance</span>
-    </div>
-</div>
+            <a href="https://gsd.trongalaxy.finance/" style="color:  #404057;text-decoration: unset;">
+                <div style="display: flex;align-items: center;
+            ">
+                    <div style=" display: flex;align-items: center;       height: 3.75rem;line-height: 27px;
+                    margin-right: 3%;margin-left: 15%;"><img src="img/computer.png" alt="">
+                    </div>
+                    <div style="margin-top: 6px; margin-right: 7%;margin-left: 5%;"><img src="img/Gang.png" alt="">
+                    </div>
+                    <div style="font-size: 1.5rem;font-family: W95FA1;
+                    ">Launch GSD</div>
+                </div>
 
-<script type="x-shader/x-fragment" id="fragmentShader">
+            </a>
+        </div>
+    </div>
+    <div class="logo">
+        <img style="width: 10rem;height: 1.25rem;margin-right: 16px" src="img/Heco_logo_white.png" />
+        <span>&</span>
+        <img style="width: 5.625rem;height: 1.75rem;margin-left: 16px" src="img/Tron.png" />
+    </div>
+    <div class="by">
+        <img style="width: 2.5rem;height: 2.5rem;margin-right: 12px" src="img/by.png" />
+        <div style="display: flex; flex-flow: column">
+            <span>Made with ❤️ by</span>
+            <span>TronGalaxy.finance</span>
+        </div>
+    </div>
+
+    <script type="x-shader/x-fragment" id="fragmentShader">
 	precision highp float;
 
 	varying vec2 vUv;
@@ -323,7 +366,7 @@
 
 </script>
 
-<script type="x-shader/x-vertex" id="vertexShader">
+    <script type="x-shader/x-vertex" id="vertexShader">
   attribute vec3 position;
 	attribute vec2 uv;
 	uniform mat4 projectionMatrix;
@@ -415,174 +458,155 @@
 
 
 </script>
-<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script
+        src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.min.js'></script>
-<script id="rendered-js">
-    class World {
-        constructor(width, height) {
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.min.js'></script>
+    <script id="rendered-js">
+        class World {
+            constructor(width, height) {
 
-            this.renderer = new THREE.WebGLRenderer({
-                alpha: true,
-                antialias: true
-            });
+                this.renderer = new THREE.WebGLRenderer({
+                    alpha: true,
+                    antialias: true
+                });
 
-            this.renderer.setPixelRatio(window.devicePixelRatio);
-            this.renderer.setSize(width, height);
-            this.container = document.getElementsByClassName("world")[0];
-            this.scene = new THREE.Scene();
-            this.width = width;
-            this.height = height;
-            this.aspectRatio = width / height;
-            this.fieldOfView = 50;
-            var nearPlane = .1;
-            var farPlane = 20000;
-            this.targetRotX1 = Math.PI / 3;
-            this.targetRotX2 = -Math.PI / 3;
-            this.targetRotY1 = 0;
-            this.targetRotY2 = 0;
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setSize(width, height);
+                this.container = document.getElementsByClassName("world")[0];
+                this.scene = new THREE.Scene();
+                this.width = width;
+                this.height = height;
+                this.aspectRatio = width / height;
+                this.fieldOfView = 50;
+                var nearPlane = .1;
+                var farPlane = 20000;
+                this.targetRotX1 = Math.PI / 3;
+                this.targetRotX2 = -Math.PI / 3;
+                this.targetRotY1 = 0;
+                this.targetRotY2 = 0;
 
-            this.camera = new THREE.PerspectiveCamera(this.fieldOfView, this.aspectRatio, nearPlane, farPlane);
-            this.camera.position.z = 250;
-            this.container.appendChild(this.renderer.domElement);
-            this.timer = 0;
-            this.createPlanes();
-            this.render();
-        }
+                this.camera = new THREE.PerspectiveCamera(this.fieldOfView, this.aspectRatio, nearPlane, farPlane);
+                this.camera.position.z = 250;
+                this.container.appendChild(this.renderer.domElement);
+                this.timer = 0;
+                this.createPlanes();
+                this.render();
+            }
 
-        createPlanes() {
-            this.material = new THREE.RawShaderMaterial({
-                vertexShader: document.getElementById('vertexShader').textContent,
-                fragmentShader: document.getElementById('fragmentShader').textContent,
-                uniforms: {
-                    time: {type: 'f', value: 5},
-                    uHue: {type: 'f', value: .95},
-                    mousePosition: {type: 'v2', value: new THREE.Vector2(0.5, 0.5)}
+            createPlanes() {
+                this.material = new THREE.RawShaderMaterial({
+                    vertexShader: document.getElementById('vertexShader').textContent,
+                    fragmentShader: document.getElementById('fragmentShader').textContent,
+                    uniforms: {
+                        time: { type: 'f', value: 5 },
+                        uHue: { type: 'f', value: .95 },
+                        mousePosition: { type: 'v2', value: new THREE.Vector2(0.5, 0.5) }
+                    }
+                });
+
+
+                this.material2 = this.material.clone();
+                this.material2.uniforms.time.value = 5;
+                this.material2.uniforms.uHue.value = .6;
+
+                this.shapeGeometry = new THREE.PlaneGeometry(200, 200, 256, 256);
+
+                this.shape = new THREE.Mesh(this.shapeGeometry, this.material);
+                this.shape.position.y = 50;
+                this.shape.rotation.x = Math.PI / 3;
+
+                this.shape2 = new THREE.Mesh(this.shapeGeometry, this.material2);
+                this.shape2.position.y = -50;
+                this.shape2.rotation.x = -Math.PI / 3;
+
+                this.scene.add(this.shape);
+                this.scene.add(this.shape2);
+            }
+
+            render() {
+                this.timer += .01;
+
+                this.shape2.rotation.y += (this.targetRotY2 - this.shape2.rotation.y) * .05;
+                this.shape2.rotation.x += (this.targetRotX2 - this.shape2.rotation.x) * .05;
+
+                this.shape.rotation.y += (this.targetRotY1 - this.shape.rotation.y) * .05;
+                this.shape.rotation.x += (this.targetRotX1 - this.shape.rotation.x) * .05;
+
+
+                this.shape.material.uniforms.time.value = this.timer;
+                this.shape2.material.uniforms.time.value = this.timer;
+                this.renderer.render(this.scene, this.camera);
+            }
+
+            loop() {
+                this.render();
+                //this.shape.rotation.z += .005;
+                requestAnimationFrame(this.loop.bind(this));
+            }
+
+            updateSize(w, h) {
+                this.renderer.setSize(w, h);
+                this.camera.aspect = w / h;
+                this.camera.updateProjectionMatrix();
+            }
+
+            mouseMove(mousePos) {
+                if (this.shape) {
+                    this.shape.material.uniforms.mousePosition.value = new THREE.Vector2(mousePos.px, -mousePos.py);
+                    this.targetRotY1 = mousePos.px * .5;
+                    this.targetRotX1 = Math.PI / 3 - mousePos.py * .3;
+
+                    this.shape2.material.uniforms.mousePosition.value = new THREE.Vector2(mousePos.px, mousePos.py);
+                    this.targetRotY2 = mousePos.px * .5;
+                    this.targetRotX2 = -Math.PI / 3 - mousePos.py * .3;
                 }
-            });
-
-
-            this.material2 = this.material.clone();
-            this.material2.uniforms.time.value = 5;
-            this.material2.uniforms.uHue.value = .6;
-
-            this.shapeGeometry = new THREE.PlaneGeometry(200, 200, 256, 256);
-
-            this.shape = new THREE.Mesh(this.shapeGeometry, this.material);
-            this.shape.position.y = 50;
-            this.shape.rotation.x = Math.PI / 3;
-
-            this.shape2 = new THREE.Mesh(this.shapeGeometry, this.material2);
-            this.shape2.position.y = -50;
-            this.shape2.rotation.x = -Math.PI / 3;
-
-            this.scene.add(this.shape);
-            this.scene.add(this.shape2);
-        }
-
-        render() {
-            this.timer += .01;
-
-            this.shape2.rotation.y += (this.targetRotY2 - this.shape2.rotation.y) * .05;
-            this.shape2.rotation.x += (this.targetRotX2 - this.shape2.rotation.x) * .05;
-
-            this.shape.rotation.y += (this.targetRotY1 - this.shape.rotation.y) * .05;
-            this.shape.rotation.x += (this.targetRotX1 - this.shape.rotation.x) * .05;
-
-
-            this.shape.material.uniforms.time.value = this.timer;
-            this.shape2.material.uniforms.time.value = this.timer;
-            this.renderer.render(this.scene, this.camera);
-        }
-
-        loop() {
-            this.render();
-            //this.shape.rotation.z += .005;
-            requestAnimationFrame(this.loop.bind(this));
-        }
-
-        updateSize(w, h) {
-            this.renderer.setSize(w, h);
-            this.camera.aspect = w / h;
-            this.camera.updateProjectionMatrix();
-        }
-
-        mouseMove(mousePos) {
-            if (this.shape) {
-                this.shape.material.uniforms.mousePosition.value = new THREE.Vector2(mousePos.px, -mousePos.py);
-                this.targetRotY1 = mousePos.px * .5;
-                this.targetRotX1 = Math.PI / 3 - mousePos.py * .3;
-
-                this.shape2.material.uniforms.mousePosition.value = new THREE.Vector2(mousePos.px, mousePos.py);
-                this.targetRotY2 = mousePos.px * .5;
-                this.targetRotX2 = -Math.PI / 3 - mousePos.py * .3;
             }
         }
-    }
-    ;
+        ;
 
-    document.addEventListener("DOMContentLoaded", domIsReady);
-    let mousePos = {x: 0, y: 0, px: 0, py: 0};
-    let PI = Math.PI;
-    let world;
+        document.addEventListener("DOMContentLoaded", domIsReady);
+        let mousePos = { x: 0, y: 0, px: 0, py: 0 };
+        let PI = Math.PI;
+        let world;
 
-    function domIsReady() {
-        world = new World(this.container, this.renderer, window.innerWidth, window.innerHeight);
-        window.addEventListener('resize', handleWindowResize, false);
-        document.addEventListener("mousemove", handleMouseMove, false);
-        document.addEventListener("touchmove", handleMouseMove, false);
-        handleWindowResize();
-        world.loop();
-    }
-
-    function handleWindowResize() {
-        world.updateSize(window.innerWidth, window.innerHeight);
-    }
-
-    function handleMouseMove(e) {
-        if (e.clientX && e.clientY) {
-            mousePos.x = e.clientX;
-            mousePos.y = e.clientY;
-            mousePos.px = mousePos.x / window.innerWidth * 2 - 1;
-            mousePos.py = mousePos.y / window.innerHeight * 2 - 1;
-        } else if (e.targetTouches) {
-            mousePos.x = e.targetTouches[0].clientX;
-            mousePos.y = e.targetTouches[0].clientY;
-            mousePos.px = mousePos.x / window.innerWidth * 2 - 1;
-            mousePos.py = mousePos.y / window.innerHeight * 2 - 1;
-            mousePos.px *= 1.5;
-            mousePos.py *= 1.5;
-            e.preventDefault();
+        function domIsReady() {
+            world = new World(this.container, this.renderer, window.innerWidth, window.innerHeight);
+            window.addEventListener('resize', handleWindowResize, false);
+            document.addEventListener("mousemove", handleMouseMove, false);
+            document.addEventListener("touchmove", handleMouseMove, false);
+            handleWindowResize();
+            world.loop();
         }
-        world.mouseMove(mousePos);
-    }
+
+        function handleWindowResize() {
+            world.updateSize(window.innerWidth, window.innerHeight);
+        }
+
+        function handleMouseMove(e) {
+            if (e.clientX && e.clientY) {
+                mousePos.x = e.clientX;
+                mousePos.y = e.clientY;
+                mousePos.px = mousePos.x / window.innerWidth * 2 - 1;
+                mousePos.py = mousePos.y / window.innerHeight * 2 - 1;
+            } else if (e.targetTouches) {
+                mousePos.x = e.targetTouches[0].clientX;
+                mousePos.y = e.targetTouches[0].clientY;
+                mousePos.px = mousePos.x / window.innerWidth * 2 - 1;
+                mousePos.py = mousePos.y / window.innerHeight * 2 - 1;
+                mousePos.px *= 1.5;
+                mousePos.py *= 1.5;
+                e.preventDefault();
+            }
+            world.mouseMove(mousePos);
+        }
 
     //# sourceURL=pen.js
-</script>
+    </script>
 
-<script>
-    let countDown = document.getElementById('countDown');
-    let endTime = 1610452800000;
-    setInterval(function () {
-        let now = new Date().getTime();
-        let leftTime = endTime - now;
+    <script>
 
-        let d = '--', h = '--', m = '--', s = '--';
-
-        if (leftTime >= 0) {
-            d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
-            h = Math.floor(leftTime / 1000 / 60 / 60 % 24);
-            m = Math.floor(leftTime / 1000 / 60 % 60);
-            s = Math.floor(leftTime / 1000 % 60);
-        }
-        countDown.innerHTML = format(d) + ':'
-            + format(h) + ':' + format(m) + ':' + format(s);
-    }, 1000);
-
-    function format(num) {
-        return num.toString().padStart(2, '0');
-    }
-</script>
+    </script>
 
 </body>
 
