@@ -86,7 +86,7 @@ function AddLiquidity({
       <div style={{ display: 'flex' }}>
         {/* Pool Status */}
         <div style={{ width: '30%' }}>
-          <BalanceBlock asset="USDC Balance" balance={userBalanceUSDC} />
+          <BalanceBlock asset="HUSD Balance" balance={userBalanceUSDC} />
         </div>
         {/* Add liquidity to pool */}
         <div style={{ width: '70%', paddingTop: '2%' }}>

@@ -29,7 +29,7 @@ function Footer({updateTheme, theme, hasWeb3}: FooterProps) {
             <div style={{ width: '50%', textAlign: 'left' }}>
               <FooterLink icon={<i className="fab fa-github"/>} href={"https://github.com/trongalaxy/GSD"}/>
               <FooterLink icon={<i className="fab fa-twitter"/>} href={"https://twitter.com/galaxy_defi"}/>
-              <FooterLink icon={<i className="fab fa-medium"/>} href={"https://galaxy19001010.medium.com/"}/>
+              <FooterLink icon={<i className="fab fa-medium"/>} href={"https://medium.com/galaxy-lab"}/>
               <FooterLink icon={<i className="fab fa-telegram"/>} href={"https://t.me/galaxy_defi"}/>
               {/*<FooterLink icon={<i className="fab fa-discord"/>} href={"https://discord.gg/vPws9Vp"}/>*/}
             </div>

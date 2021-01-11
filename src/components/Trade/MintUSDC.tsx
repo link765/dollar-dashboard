@@ -26,7 +26,7 @@ function MintUSDC({
       <div style={{ display: 'flex' }}>
         {/* USDC balance */}
         <div style={{ width: '30%' }}>
-          <BalanceBlock asset="USDC Balance" balance={userBalanceUSDC} />
+          <BalanceBlock asset="HUSD Balance" balance={userBalanceUSDC} />
         </div>
         {/* Mint */}
         <div style={{ width: '38%'}} />

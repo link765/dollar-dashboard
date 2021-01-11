@@ -4,10 +4,18 @@ import {
   Box, LinkBase, Tag,
 } from '@aragon/ui';
 import EpochBlock from "../common/EpochBlock";
-
+import {getEpoch, getEpochTime,
+} from '../../utils/infura';
+import {ESDS} from "../../constants/tokens";
 async function epochformatted() {
+  const [epochStr, epochTimeStr] = await Promise.all([
+        getEpoch(ESDS.addr),
+        getEpochTime(ESDS.addr),
+      ]);
+  //alert(epochStr)
+  //alert(epochTimeStr)
   const epochStart = 1610452800;
-  const epochPeriod = 8 * 60 * 60;
+  const epochPeriod = 2 * 60 * 60;
   const hour = 60 * 60;
   const minute = 60;
   const unixTimeSec = Math.floor(Date.now() / 1000);
@@ -19,7 +27,7 @@ async function epochformatted() {
   epochRemainder -= epochHour * hour;
   const epochMinute = Math.floor(epochRemainder / minute);
   epochRemainder -= epochMinute * minute;
-  //return `${epoch}-0${epochHour}:${epochMinute > 9 ? epochMinute : "0" + epochMinute.toString()}:${epochRemainder > 9 ? epochRemainder : "0" + epochRemainder.toString()}`;
+  //return `${epochStr}-0${epochHour}:${epochMinute > 9 ? epochMinute : "0" + epochMinute.toString()}:${epochRemainder > 9 ? epochRemainder : "0" + epochRemainder.toString()}`;
   return `0-00:00:00`;
 }
 
