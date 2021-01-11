@@ -252,6 +252,13 @@
         font-family: W95FA1;
         ">Start your first algorithmic stablecoin！
         </div>
+        <div id="countDown" style="
+        margin-top: 16px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #FFFFFF;
+        line-height: 2rem;">Start your first algorithmic stablecoin！
+    </div>
 
         <div style="
         width: 17rem;
@@ -605,7 +612,27 @@
     </script>
 
     <script>
+          let countDown = document.getElementById('countDown');
+    let endTime = 1610452800000;
+    setInterval(function () {
+        let now = new Date().getTime();
+        let leftTime = endTime - now;
 
+        let d = '--', h = '--', m = '--', s = '--';
+
+        if (leftTime >= 0) {
+            d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
+            h = Math.floor(leftTime / 1000 / 60 / 60 % 24);
+            m = Math.floor(leftTime / 1000 / 60 % 60);
+            s = Math.floor(leftTime / 1000 % 60);
+        }
+        countDown.innerHTML = format(d) + ':'
+            + format(h) + ':' + format(m) + ':' + format(s);
+    }, 1000);
+
+    function format(num) {
+        return num.toString().padStart(2, '0');
+    }
     </script>
 
 </body>
