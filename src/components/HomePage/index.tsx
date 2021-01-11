@@ -28,7 +28,8 @@ async function epochformatted() {
   const epochMinute = Math.floor(epochRemainder / minute);
   epochRemainder -= epochMinute * minute;
   //return `${epochStr}-0${epochHour}:${epochMinute > 9 ? epochMinute : "0" + epochMinute.toString()}:${epochRemainder > 9 ? epochRemainder : "0" + epochRemainder.toString()}`;
-  return `0-00:00:00`;
+  return `${epochStr}-00:00:00`;
+  //return `0-00:00:00`;
 }
 
 type HomePageProps = {
