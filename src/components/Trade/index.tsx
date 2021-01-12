@@ -57,7 +57,7 @@ function UniswapPool({ user }: {user: string}) {
             title="Info"
             description="View GSD-HUSD pool stats."
             icon={<i className="fas fa-chart-area"/>}
-            href={"#"}
+            href={"https://info.mdex.com/#/token/0x03fa282789af9e2574a47024b5ef1f5074ede92f"}
           />
         </div>
 
@@ -66,7 +66,7 @@ function UniswapPool({ user }: {user: string}) {
             title="Trade"
             description="Trade døllar tokens."
             icon={<i className="fas fa-exchange-alt"/>}
-            href={"#"}
+            href={"https://ht.mdex.com/#/swap?inputCurrency=0x03fa282789af9e2574a47024b5ef1f5074ede92f"}
           />
         </div>
 
@@ -75,7 +75,7 @@ function UniswapPool({ user }: {user: string}) {
             title="Supply"
             description="Supply and redeem liquidity."
             icon={<i className="fas fa-water"/>}
-            href={"#"}
+            href={"https://ht.mdex.com/#/add/0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047/0x03FA282789AF9E2574A47024b5EF1F5074edE92F"}
           />
         </div>
       </div>
