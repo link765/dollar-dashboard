@@ -1,5 +1,5 @@
-supply = 1000
+supply = 5577
 for i in range(1, 13):
     supply = (supply+100) * 1.03
 
-print(supply-18*100)
+print(supply-1200-5577)
