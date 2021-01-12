@@ -1,0 +1,193 @@
+<html>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/riot@4/riot+compiler.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.2.11/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.js"></script>
+  <script src="app.riot" type="riot"></script>
+  <script src="app.js"></script>
+
+</html>
+
+<style>
+  * {
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  body {
+    color: #000;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+
+  pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  }
+
+  .wrapper {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  .footer {
+    margin-top: 50px;
+    font-size: 14px;
+    font-weight: normal;
+    color: gray;
+    text-align: center;
+  }
+
+  .footer .donate {
+    margin: 10px 0;
+  }
+
+  .footer a, .footer a:hover, .footer a:visited {
+    color: gray;
+  }
+
+  a, a:hover, a:visited {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .stats {
+    margin-bottom: 20px;
+  }
+
+  .stats .item {
+    display: inline-block;
+    width: 22.5%;
+  }
+
+  .stats .title {
+    font-weight: normal;
+  }
+
+  .stats .content {
+    font-size: 20px;
+  }
+
+  .stats .last {
+    text-align: right;
+    width: 20%;
+  }
+
+  .stats .next {
+    width: 30%;
+  }
+
+  .stats .spot {
+    width: 25%;
+  }
+
+  .stats .twap {
+    width: 25%;
+  }
+
+  .updown {
+    font-size: 14px;
+    color: 14365D;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-weight: normal;
+  }
+
+  table {
+    width: 300px;
+  }
+
+  table td {
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  table td.title {
+    padding-right: 50px;
+  }
+
+  table tr {
+    line-height: 25px;
+  }
+
+  h2 {
+    font-weight: normal;
+    font-size: 20px;
+  }
+
+  .header img {
+    width: 30px;
+    vertical-align: middle;
+  }
+
+  .header * {
+    display: inline-block;
+  }
+
+  .header .links {
+    float: right;
+  }
+
+  .header a {
+    margin-left: 10px;
+  }
+
+  .unlocking {
+    width: 100%;
+    text-align: left;
+    margin: 30px 0;
+  }
+
+  .hero {
+    width: 90%;
+    background: #003760;
+    color: #fff;
+    padding: 80px 5%;
+    margin: 30px 0;
+    position: relative;
+  }
+
+  .hero .next {
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+
+  .hero .main {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .hero .sub-main {
+    margin-top: 10px;
+  }
+</style>
+
+<div class="wrapper">
+
+  <app></app>
+</div>
