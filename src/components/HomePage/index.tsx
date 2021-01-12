@@ -28,7 +28,7 @@ async function epochformatted() {
   const epochMinute = Math.floor(epochRemainder / minute);
   epochRemainder -= epochMinute * minute;
   //return `${epochStr}-0${epochHour}:${epochMinute > 9 ? epochMinute : "0" + epochMinute.toString()}:${epochRemainder > 9 ? epochRemainder : "0" + epochRemainder.toString()}`;
-  return `${epochStr}-00:00:00`;
+  return `${epochStr}`;
   //return `0-00:00:00`;
 }
 
@@ -109,11 +109,11 @@ function HomePage({user}: HomePageProps) {
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%' }}>
           <MainButton
-            title="Governance"
-            description="Vote on upgrades."
+            title="Tools"
+            description="Tools for GSD."
             icon={<i className="fas fa-poll"/>}
             onClick={() => {
-              history.push('/governance/');
+              window.location.href='/tools/index.html';
             }}
           />
         </div>
