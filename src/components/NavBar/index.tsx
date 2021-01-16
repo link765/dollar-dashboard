@@ -17,23 +17,24 @@ function NavBar({ hasWeb3, user, setUser }: NavbarProps) {
   return (
     <>
       <div
+        className="nav-bar-container"
         style={{
-          borderTop: '1px solid ' + currentTheme.border,
           backgroundColor: 'none',
           textAlign: 'center',
-          height: '128px',
           width: '100%',
-          fontSize: '14px',
+          fontSize: '0.35rem',
+          paddingTop: '10px',
+          paddingBottom: '10px'
         }}
       >
-        <div style={{ maxWidth: '1100px', marginLeft: 'auto', marginRight: 'auto' }}>
-          <div style={{ display: 'flex', paddingTop: '24px' }}>
-            <div style={{ width: '20%', textAlign: 'left' }}>
-              <NavLink to="/" component={LinkBase} style={{ marginRight: '16px', height: '40px' }}>
-                <img src={require("../../assets/img/LOGO2.svg")} height="42px" alt="Galaxy Set Dollar" />
-              </NavLink>
-            </div>
-            <div style={{ width: '60%', textAlign: 'center' }}>
+        <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+          <div style={{ display: 'flex' }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ width: '80px', height: '40px', display: 'inline-block', textAlign: 'left', position: 'relative', top: '10px' }}>
+                <NavLink to="/" component={LinkBase} style={{ marginRight: '16px', height: '40px' }}>
+                  <img src={require("../../assets/img/LOGO2.svg")} height="40px" alt="Galaxy Set Dollar" />
+                </NavLink>
+              </div>
               <LinkButton title="Home" to="/" />
               <LinkButton title="Wallet" to="/dao/" />
               <LinkButton title="Liquidity" to="/pool/" />
@@ -43,9 +44,9 @@ function NavBar({ hasWeb3, user, setUser }: NavbarProps) {
               <LinkButton title="Coupons" to="/coupons/" />
               <a href={'/tools/index.html'} style={{textDecoration:'none', color:'white',fontSize:'22px',fontWeight :'bold'}}>Tools</a>
             </div>
-            <div className="nav-connect-btn" style={{ width: '20%', textAlign: 'right' }}>
-              <ConnectButton hasWeb3={hasWeb3} user={user} setUser={setUser} />
-            </div>
+          </div>
+          <div className="nav-connect-btn" style={{ textAlign: 'right', paddingRight: '10px' }}>
+            <ConnectButton hasWeb3={hasWeb3} user={user} setUser={setUser} />
           </div>
         </div>
       </div>
@@ -69,13 +70,13 @@ function LinkButton({ title, to }: linkButtonProps) {
         alignItems: 'center',
         marginLeft: '8px',
         marginRight: '8px',
-        height: '40px',
+        height: '1rem',
         opacity: 1,
         color: '#FFFFFF'
       }}
       activeStyle={{ color: '#FFF1C9' }}
     >
-      <span style={{ display: 'block', padding: '1%', fontSize: '22px', fontWeight: 'bold' }}>{title}</span>
+      <span style={{ display: 'block', padding: '1%', fontSize: '0.5rem', fontWeight: 'bold' }}>{title}</span>
     </NavLink>
   );
 }

@@ -51,8 +51,8 @@ function UniswapPool({ user }: {user: string}) {
         uniswapPair={UNI.addr}
       />
 
-      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%'  }}>
+      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-around' }}>
+        <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px'  }}>
           <MainButton
             title="Info"
             description="View GSD-HUSD pool stats."
@@ -61,7 +61,7 @@ function UniswapPool({ user }: {user: string}) {
           />
         </div>
 
-        <div style={{ flexBasis: '30%' }}>
+        <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px' }}>
           <MainButton
             title="Trade"
             description="Trade døllar tokens."
@@ -70,7 +70,7 @@ function UniswapPool({ user }: {user: string}) {
           />
         </div>
 
-        <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%' }}>
+        <div style={{ flexBasis: '45%' }}>
           <MainButton
             title="Supply"
             description="Supply and redeem liquidity."
@@ -94,16 +94,16 @@ function MainButton({
   title, description, icon, href,
 }:MainButtonProps) {
   return (
-    <LinkBase href={href} style={{ width: '100%' }}>
+    <LinkBase className="main-btn" href={href} style={{ width: '100%' }}>
       <Box>
-        <div style={{ padding: 10, fontSize: 24, color: '#384E7E', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '0.5rem', color: '#384E7E', fontWeight: 'bold' }}>
           {title}
         </div>
-        <span style={{ fontSize: 48 }}>
+        <span style={{ fontSize: '1rem', }}>
           {icon}
         </span>
         {/*<img alt="icon" style={{ padding: 10, height: 64 }} src={iconUrl} />*/}
-        <div style={{ paddingTop: 5, opacity: 0.5 }}>
+        <div style={{ opacity: 0.5, whiteSpace: 'normal', height: '1.1rem' }}>
           {' '}
           {description}
           {' '}

@@ -12,11 +12,11 @@ type IconHeaderProps = {
 function IconHeader({ icon, text }: IconHeaderProps) {
   return (
     <>
-      <div className="icon-header" style={{ padding: '1%', display: 'flex', alignItems: 'center' }}>
-        <div style={{ marginRight: '2%', fontSize: 48 }}>
+      <div className="icon-header" style={{ padding: '0 2%', display: 'flex', alignItems: 'center' }}>
+        <div style={{ marginRight: '2%', fontSize: '0.8rem' }}>
           {icon}
         </div>
-        <div>
+        <div className="icon-header-text">
           <Header primary={text} />
         </div>
       </div>

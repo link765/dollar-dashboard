@@ -27,105 +27,107 @@ function WithdrawDeposit({
   const [withdrawAmount, setWithdrawAmount] = useState(new BigNumber(0));
 
   return (
-    <Box heading="Stage">
-      {allowance.comparedTo(MAX_UINT256) === 0 ?
-        <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
-          {/* total Issued */}
-          <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"GSD"}/>
-          </div>
-          {/* Deposit Døllar into DAO */}
-          <div style={{flexBasis: '33%', paddingTop: '2%'}}>
-            <div style={{display: 'flex'}}>
-              <div style={{width: '60%', minWidth: '6em'}}>
-                <>
-                  <BigNumberInput
-                    adornment="GSD"
-                    value={depositAmount}
-                    setter={setDepositAmount}
-                    disabled={status !== 0}
-                  />
-                  <MaxButton
-                    onClick={() => {
-                      setDepositAmount(balance);
-                    }}
-                  />
-                </>
+    <div className="block-section">
+      <Box heading="Stage">
+        {allowance.comparedTo(MAX_UINT256) === 0 ?
+            <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
+              {/* total Issued */}
+              <div style={{flexBasis: '32%'}}>
+                <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"GSD"}/>
               </div>
-              <div style={{width: '40%', minWidth: '6em'}}>
+              {/* Deposit Døllar into DAO */}
+              <div style={{flexBasis: '33%', paddingTop: '2%'}}>
+                <div style={{display: 'flex'}}>
+                  <div style={{width: '60%', minWidth: '6em'}}>
+                    <>
+                      <BigNumberInput
+                          adornment="GSD"
+                          value={depositAmount}
+                          setter={setDepositAmount}
+                          disabled={status !== 0}
+                      />
+                      <MaxButton
+                          onClick={() => {
+                            setDepositAmount(balance);
+                          }}
+                      />
+                    </>
+                  </div>
+                  <div style={{width: '40%', minWidth: '6em'}}>
+                    <Button
+                        wide
+                        icon={status === 0 ? <IconCirclePlus/> : <IconLock/>}
+                        label="Deposit"
+                        onClick={() => {
+                          deposit(
+                              ESDS.addr,
+                              toBaseUnitBN(depositAmount, ESD.decimals),
+                          );
+                        }}
+                        disabled={status === 1 || !isPos(depositAmount) || depositAmount.isGreaterThan(balance)}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div style={{flexBasis: '2%'}}/>
+              {/* Withdraw Døllar from DAO */}
+              <div style={{flexBasis: '33%', paddingTop: '2%'}}>
+                <div style={{display: 'flex'}}>
+                  <div style={{width: '60%', minWidth: '7em'}}>
+                    <>
+                      <BigNumberInput
+                          adornment="GSD"
+                          value={withdrawAmount}
+                          setter={setWithdrawAmount}
+                          disabled={status !== 0}
+                      />
+                      <MaxButton
+                          onClick={() => {
+                            setWithdrawAmount(stagedBalance);
+                          }}
+                      />
+                    </>
+                  </div>
+                  <div style={{width: '40%', minWidth: '7em'}}>
+                    <Button
+                        wide
+                        icon={status === 0 ? <IconCircleMinus/> : <IconLock/>}
+                        label="Withdraw"
+                        onClick={() => {
+                          withdraw(
+                              ESDS.addr,
+                              toBaseUnitBN(withdrawAmount, ESD.decimals),
+                          );
+                        }}
+                        disabled={status === 1 || !isPos(withdrawAmount) || withdrawAmount.isGreaterThan(stagedBalance)}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            :
+            <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
+              {/* total Issued */}
+              <div style={{flexBasis: '32%'}}>
+                <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"GSD"}/>
+              </div>
+              <div style={{flexBasis: '25%'}}/>
+              {/* Approve DAO to spend Døllar */}
+              <div className="withdraw-deposit-btn" style={{flexBasis: '25%', paddingTop: '2%'}}>
                 <Button
-                  wide
-                  icon={status === 0 ? <IconCirclePlus/> : <IconLock/>}
-                  label="Deposit"
-                  onClick={() => {
-                    deposit(
-                      ESDS.addr,
-                      toBaseUnitBN(depositAmount, ESD.decimals),
-                    );
-                  }}
-                  disabled={status === 1 || !isPos(depositAmount) || depositAmount.isGreaterThan(balance)}
+                    wide
+                    icon={<IconCirclePlus />}
+                    label="Approve"
+                    onClick={() => {
+                      approve(ESD.addr, ESDS.addr);
+                    }}
+                    disabled={user === ''}
                 />
               </div>
             </div>
-          </div>
-          <div style={{flexBasis: '2%'}}/>
-          {/* Withdraw Døllar from DAO */}
-          <div style={{flexBasis: '33%', paddingTop: '2%'}}>
-            <div style={{display: 'flex'}}>
-              <div style={{width: '60%', minWidth: '7em'}}>
-                <>
-                  <BigNumberInput
-                    adornment="GSD"
-                    value={withdrawAmount}
-                    setter={setWithdrawAmount}
-                    disabled={status !== 0}
-                  />
-                  <MaxButton
-                    onClick={() => {
-                      setWithdrawAmount(stagedBalance);
-                    }}
-                  />
-                </>
-              </div>
-              <div style={{width: '40%', minWidth: '7em'}}>
-                <Button
-                  wide
-                  icon={status === 0 ? <IconCircleMinus/> : <IconLock/>}
-                  label="Withdraw"
-                  onClick={() => {
-                    withdraw(
-                      ESDS.addr,
-                      toBaseUnitBN(withdrawAmount, ESD.decimals),
-                    );
-                  }}
-                  disabled={status === 1 || !isPos(withdrawAmount) || withdrawAmount.isGreaterThan(stagedBalance)}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        :
-        <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
-          {/* total Issued */}
-          <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"GSD"}/>
-          </div>
-          <div style={{flexBasis: '43%'}}/>
-          {/* Approve DAO to spend Døllar */}
-          <div className="withdraw-deposit-btn" style={{flexBasis: '25%', paddingTop: '2%'}}>
-            <Button
-              wide
-              icon={<IconCirclePlus />}
-              label="Approve"
-              onClick={() => {
-                approve(ESD.addr, ESDS.addr);
-              }}
-              disabled={user === ''}
-            />
-          </div>
-        </div>
-      }
-    </Box>
+        }
+      </Box>
+    </div>
   );
 }
 

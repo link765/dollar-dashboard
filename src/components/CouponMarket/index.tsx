@@ -148,11 +148,13 @@ function CouponMarket({ user }: {user: string}) {
         </div>
       </div>
 
-      <PurchaseHistory
-        user={user}
-        hideRedeemed={hideRedeemed}
-        totalRedeemable={redeemable}
-      />
+      <div className="block-section">
+        <PurchaseHistory
+            user={user}
+            hideRedeemed={hideRedeemed}
+            totalRedeemable={redeemable}
+        />
+      </div>
     </>
   );
 }

@@ -16,16 +16,16 @@ const TradePageHeader = ({
 
   return (
     <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', color: '#FFFFFF', alignItems: 'center' }}>
-      <div style={{ flexBasis: '25%' }}>
+      <div style={{ flexBasis: '50%' }}>
         <BalanceBlock asset="GSD Price" balance={price} suffix={"HUSD"}/>
       </div>
-      <div style={{ flexBasis: '25%' }}>
+      <div style={{ flexBasis: '50%' }}>
         <BalanceBlock asset="GSD Liquidity" balance={pairBalanceESD} suffix={"GSD"}/>
       </div>
-      <div style={{ flexBasis: '25%' }}>
+      <div style={{ flexBasis: '50%' }}>
         <BalanceBlock asset="HUSD Liquidity" balance={pairBalanceUSDC} suffix={"HUSD"}/>
       </div>
-      <div style={{ flexBasis: '25%' }}>
+      <div style={{ flexBasis: '50%' }}>
         <>
           <AddressBlock label="HecoSwap Pair Contract" address={uniswapPair} />
         </>

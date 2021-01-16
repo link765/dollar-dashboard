@@ -49,81 +49,83 @@ function Provide({
   };
 
   return (
-    <Box heading="Provide">
-      {userUSDCAllowance.comparedTo(MAX_UINT256.dividedBy(2)) > 0 ?
-        <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
-          {/* total rewarded */}
-          <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Rewarded" balance={rewarded} suffix={"GSD"} />
-          </div>
-          <div style={{flexBasis: '33%'}}>
-            <BalanceBlock asset="HUSD Balance" balance={userUSDCBalance} suffix={"HUSD"} />
-          </div>
-          <div style={{flexBasis: '2%'}}/>
-          {/* Provide liquidity using Pool rewards */}
-          <div style={{flexBasis: '33%', paddingTop: '2%'}}>
-            <div style={{display: 'flex'}}>
-              <div style={{width: '60%', minWidth: '6em'}}>
-                <>
-                  <BigNumberInput
-                    adornment="GSD"
-                    value={provideAmount}
-                    setter={onChangeAmountESD}
-                    disabled={status === 1}
-                  />
-                  <PriceSection label="Requires " amt={usdcAmount} symbol=" HUSD"/>
-                  <MaxButton
-                    onClick={() => {
-                      onChangeAmountESD(rewarded);
-                    }}
-                  />
-                </>
+    <div className="block-section">
+      <Box heading="Provide">
+        {userUSDCAllowance.comparedTo(MAX_UINT256.dividedBy(2)) > 0 ?
+            <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
+              {/* total rewarded */}
+              <div style={{flexBasis: '32%'}}>
+                <BalanceBlock asset="Rewarded" balance={rewarded} suffix={"GSD"} />
               </div>
-              <div style={{width: '40%', minWidth: '6em'}}>
+              <div style={{flexBasis: '33%'}}>
+                <BalanceBlock asset="HUSD Balance" balance={userUSDCBalance} suffix={"HUSD"} />
+              </div>
+              <div style={{flexBasis: '2%'}}/>
+              {/* Provide liquidity using Pool rewards */}
+              <div style={{flexBasis: '33%', paddingTop: '2%'}}>
+                <div style={{display: 'flex'}}>
+                  <div style={{width: '60%', minWidth: '6em'}}>
+                    <>
+                      <BigNumberInput
+                          adornment="GSD"
+                          value={provideAmount}
+                          setter={onChangeAmountESD}
+                          disabled={status === 1}
+                      />
+                      <PriceSection label="Requires " amt={usdcAmount} symbol=" HUSD"/>
+                      <MaxButton
+                          onClick={() => {
+                            onChangeAmountESD(rewarded);
+                          }}
+                      />
+                    </>
+                  </div>
+                  <div style={{width: '40%', minWidth: '6em'}}>
+                    <Button
+                        wide
+                        icon={<IconArrowUp/>}
+                        label="Provide"
+                        onClick={() => {
+                          providePool(
+                              poolAddress,
+                              toBaseUnitBN(provideAmount, ESD.decimals),
+                              (hash) => setProvideAmount(new BigNumber(0))
+                          );
+                        }}
+                        disabled={poolAddress === '' || status !== 0 || !isPos(provideAmount) || usdcAmount.isGreaterThan(userUSDCBalance)}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            :
+            <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
+              {/* total rewarded */}
+              <div style={{flexBasis: '50%'}}>
+                <BalanceBlock asset="Rewarded" balance={rewarded} suffix={"GSD"} />
+              </div>
+              <div style={{flexBasis: '50%'}}>
+                <BalanceBlock asset="HUSD Balance" balance={userUSDCBalance} suffix={"HUSD"} />
+              </div>
+              {/* Approve Pool to spend USDC */}
+              <div className="withdraw-deposit-btn" style={{flexBasis: '25%', paddingTop: '2%'}}>
                 <Button
-                  wide
-                  icon={<IconArrowUp/>}
-                  label="Provide"
-                  onClick={() => {
-                    providePool(
-                      poolAddress,
-                      toBaseUnitBN(provideAmount, ESD.decimals),
-                      (hash) => setProvideAmount(new BigNumber(0))
-                    );
-                  }}
-                  disabled={poolAddress === '' || status !== 0 || !isPos(provideAmount) || usdcAmount.isGreaterThan(userUSDCBalance)}
+                    wide
+                    icon={<IconCirclePlus/>}
+                    label="Approve"
+                    onClick={() => {
+                      approve(USDC.addr, poolAddress);
+                    }}
+                    disabled={poolAddress === '' || user === ''}
                 />
               </div>
             </div>
-          </div>
+        }
+        <div style={{width: '100%', paddingTop: '2%', textAlign: 'center'}}>
+          <span style={{ opacity: 0.5 }}> Zap your rewards directly to LP by providing more HUSD </span>
         </div>
-        :
-        <div className="pool-deposit" style={{display: 'flex', flexWrap: 'wrap'}}>
-          {/* total rewarded */}
-          <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Rewarded" balance={rewarded} suffix={"GSD"} />
-          </div>
-          <div style={{flexBasis: '43%'}}>
-            <BalanceBlock asset="HUSD Balance" balance={userUSDCBalance} suffix={"HUSD"} />
-          </div>
-          {/* Approve Pool to spend USDC */}
-          <div className="withdraw-deposit-btn" style={{flexBasis: '25%', paddingTop: '2%'}}>
-            <Button
-              wide
-              icon={<IconCirclePlus/>}
-              label="Approve"
-              onClick={() => {
-                approve(USDC.addr, poolAddress);
-              }}
-              disabled={poolAddress === '' || user === ''}
-            />
-          </div>
-        </div>
-      }
-      <div style={{width: '100%', paddingTop: '2%', textAlign: 'center'}}>
-        <span style={{ opacity: 0.5 }}> Zap your rewards directly to LP by providing more HUSD </span>
-      </div>
-    </Box>
+      </Box>
+    </div>
   );
 }
 

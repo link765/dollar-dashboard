@@ -16,19 +16,19 @@ const CouponMarketHeader = ({
   debt, supply, coupons, premium, redeemable
 }: CouponMarketHeaderProps) => (
   <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', color: '#FFFFFF', alignItems: 'center' }}>
-    <div style={{ flexBasis: '20%' }}>
+    <div style={{ flexBasis: '33%' }}>
       <BalanceBlock asset="Debt Ratio" balance={ownership(debt, supply)} suffix={"%"}/>
     </div>
-    <div style={{ flexBasis: '20%' }}>
+    <div style={{ flexBasis: '33%' }}>
       <BalanceBlock asset="Total Debt" balance={debt} suffix={"GSD"}/>
     </div>
-    <div style={{ flexBasis: '20%' }}>
+    <div style={{ flexBasis: '33%' }}>
       <BalanceBlock asset="Coupons" balance={coupons} />
     </div>
-    <div style={{ flexBasis: '20%' }}>
+    <div style={{ flexBasis: '33%' }}>
       <BalanceBlock asset="Premium" balance={premium.multipliedBy(100)} suffix={"%"}/>
     </div>
-    <div style={{ flexBasis: '20%' }}>
+    <div style={{ flexBasis: '33%' }}>
       <BalanceBlock asset="Redeemable" balance={redeemable}/>
     </div>
   </div>

@@ -120,13 +120,16 @@ function Regulation({ user }: {user: string}) {
         couponPremium={couponPremium}
       />
 
-      <Header primary="Regulation History" />
+      <div className="block-header">
+        <Header primary="Regulation History" />
+      </div>
 
-      <RegulationHistory
-        user={user}
-      />
+      <div className="block-section regulation-history">
+        <RegulationHistory
+            user={user}
+        />
+      </div>
     </>
   );
 }
-
 export default Regulation;

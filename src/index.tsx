@@ -7,9 +7,13 @@ import * as serviceWorker from './serviceWorker';
 import Moment from 'moment'
 import momentLocalizer from 'react-widgets-moment';
 import './index.css';
+import './assets/js/flexible'
 
 Moment.locale('en')
 momentLocalizer()
+if(!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  window.location.href = 'https://pc.gsd.trongalaxy.finance'
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

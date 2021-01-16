@@ -61,19 +61,19 @@ function HomePage({user}: HomePageProps) {
 
   return (
     <>
-      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '68%', display: 'flex' }}>
-          <img src={require("../../assets/img/LOGO2.svg")} alt="" style={{ margin: '0 20px',height:'42px' }} />
-          <span style={{ color: '#FFF1C9', fontSize: '28px', fontFamily: 'HYk2gj' }}>GALAXY SET DOLLAR</span>
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-around' }}>
+        <div style={{ flexBasis: '45%' }}>
+          <img src={require("../../assets/img/LOGO2.svg")} alt="" style={{ marginRight: '10px',height:'42px' }} />
+          <div style={{ color: '#FFF1C9', fontSize: '0.4rem', fontFamily: 'HYk2gj' }}>GALAXY SET DOLLAR</div>
         </div>
-        <div className="epoch-btn" style={{ flexBasis: '30%', flexGrow: 1, marginRight: '2%', textAlign: 'right'}}>
+        <div className="epoch-btn" style={{ flexBasis: '45%', textAlign: 'right', marginBottom: '10px'}}>
           <Box>
             <EpochBlock epoch={epochTime}/>
           </Box>
         </div>
       </div>
-      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%'  }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-around' }}>
+        <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px'  }}>
           <MainButton
             title="Wallet"
             description="Earn rewards for governing"
@@ -84,7 +84,7 @@ function HomePage({user}: HomePageProps) {
           />
         </div>
 
-        <div style={{ flexBasis: '30%' }}>
+        <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px' }}>
           <MainButton
             title="LP Rewards"
             description="Earn rewards for providing liquidity."
@@ -95,7 +95,7 @@ function HomePage({user}: HomePageProps) {
           />
         </div>
 
-        <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%' }}>
+        <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px' }}>
           <MainButton
             title="Regulation"
             description="Network supply regulation statistics."
@@ -105,38 +105,37 @@ function HomePage({user}: HomePageProps) {
             }}
           />
         </div>
-      </div>
-      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%' }}>
+
+        <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px' }}>
           <MainButton
-            title="Tools"
-            description="Tools for GSD."
-            icon={<i className="fas fa-poll"/>}
-            onClick={() => {
-              window.location.href='/tools/index.html';
-            }}
+              title="Tools"
+              description="Tools for GSD."
+              icon={<i className="fas fa-poll"/>}
+              onClick={() => {
+                window.location.href='/tools/index.html';
+              }}
           />
         </div>
 
-        <div style={{ flexBasis: '30%' }}>
+        <div style={{ flexBasis: '45%', overflow: 'hidden' }}>
           <MainButton
-            title="Trade"
-            description="Trade døllar tokens."
-            icon={<i className="fas fa-exchange-alt"/>}
-            onClick={() => {
-              history.push('/trade/');
-            }}
+              title="Trade"
+              description="Trade døllar tokens."
+              icon={<i className="fas fa-exchange-alt"/>}
+              onClick={() => {
+                history.push('/trade/');
+              }}
           />
         </div>
 
-        <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%'  }}>
+        <div style={{ flexBasis: '45%', overflow: 'hidden'  }}>
           <MainButton
-            title="Coupons"
-            description="Purchase and redeem coupons."
-            icon={<i className="fas fa-ticket-alt"/>}
-            onClick={() => {
-              history.push('/coupons/');
-            }}
+              title="Coupons"
+              description="Purchase and redeem coupons."
+              icon={<i className="fas fa-ticket-alt"/>}
+              onClick={() => {
+                history.push('/coupons/');
+              }}
           />
         </div>
       </div>
@@ -158,15 +157,15 @@ function MainButton({
   return (
     <LinkBase className="main-btn" onClick={onClick} style={{ width: '100%' }}>
       <Box>
-        <div style={{ padding: 10, fontSize: 24, fontWeight: 'bold', color: '#384E7E' }}>
+        <div style={{ fontSize: '0.5rem', fontWeight: 'bold', color: '#384E7E' }}>
           {title}
           {tag ? <Tag>{tag}</Tag> : <></>}
         </div>
-        <span style={{ fontSize: 48 }}>
+        <span style={{ fontSize: '1rem' }}>
           {icon}
         </span>
         {/*<img alt="icon" style={{ padding: 10, height: 64 }} src={iconUrl} />*/}
-        <div style={{ paddingTop: 5, opacity: 0.5 }}>
+        <div style={{ opacity: 0.5, whiteSpace: 'normal', height: '1.1rem' }}>
           {' '}
           {description}
           {' '}

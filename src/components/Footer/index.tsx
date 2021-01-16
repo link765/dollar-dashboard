@@ -33,7 +33,7 @@ function Footer({updateTheme, theme, hasWeb3}: FooterProps) {
               <FooterLink icon={<i className="fab fa-telegram"/>} href={"https://t.me/galaxy_defi"}/>
               {/*<FooterLink icon={<i className="fab fa-discord"/>} href={"https://discord.gg/vPws9Vp"}/>*/}
             </div>
-            <div style={{ width: '45%', textAlign: 'right', height: '18px', marginTop: '15px', marginBottom: '15px'}}>
+            <div style={{ width: '45%', textAlign: 'right'}}>
               made with <span role="img" aria-labelledby="heartbreak">💔️</span> by the &#123;TronGalaxy.finance&#125;.
             </div>
             {/*<div style={{ width: '5%', textAlign: 'right', marginTop: '4px' }}>*/}
@@ -55,7 +55,7 @@ function FooterLink({
   icon, href,
 }:FooterLinkProp) {
   return (
-    <LinkBase href={href} style={{marginLeft: '8px', marginRight: '8px'}}>
+    <LinkBase href={href} style={{marginLeft: '5px', marginRight: '5px'}}>
       <span style={{ fontSize: 32 }}>{icon}</span>
     </LinkBase>
   );

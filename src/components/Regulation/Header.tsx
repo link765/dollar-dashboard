@@ -39,7 +39,7 @@ const RegulationHeader = ({
   return (
     <>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
-        <div style={{ flexBasis: '25%', marginRight: '2%' }}>
+        <div className="block-section">
           <Box heading="Supply Allocation">
             <Distribution
               heading={`∅${formatMoney(totalSupply.toNumber())}`}
@@ -51,7 +51,7 @@ const RegulationHeader = ({
             />
           </Box>
         </div>
-        <div style={{ flexBasis: '25%', marginRight: '2%' }}>
+        <div className="block-section">
           <Box heading="DAO Breakdown">
             <Distribution
               heading={`∅${formatMoney(daoTotalSupply.toNumber())}`}
@@ -63,7 +63,7 @@ const RegulationHeader = ({
             />
           </Box>
         </div>
-        <div style={{ flexBasis: '25%' }}>
+        <div className="block-section">
           <Box heading="HecoSwap Breakdown">
             <Distribution
               heading={`∅${formatMoney(poolTotalSupply.toNumber())}`}

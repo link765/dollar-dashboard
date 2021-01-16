@@ -21,16 +21,16 @@ function BalanceBlock({ asset, balance, suffix=""}: BlanceBlockProps) {
 
   return (
     <>
-      <div style={{ fontSize: 14, padding: 3, fontWeight: 'bold' }}>{asset}</div>
+      <div style={{ fontSize: '0.5rem', padding: 3, fontWeight: 'bold' }}>{asset}</div>
       <div style={{ padding: 3, fontWeight: 'bold'  }}>
-        <span style={{ fontSize: 24 }}>{integer}</span>
+        <span style={{ fontSize: '0.5rem' }}>{integer}</span>
         .
-        <span style={{ fontSize: 24 }}>
+        <span style={{ fontSize: '0.5rem' }}>
           {' '}
           {digits}
           {' '}
         </span>
-        {suffix === "" ? '' : <span style={{ fontSize: 24 }}>{suffix}</span> }
+        {suffix === "" ? '' : <span style={{ fontSize: '0.5rem' }}>{suffix}</span> }
       </div>
     </>
   );

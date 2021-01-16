@@ -24,20 +24,20 @@ function status(accountStatus, unlocked) {
 const AccountPageHeader = ({
   accountESDBalance, accountESDSBalance, totalESDSSupply, accountStagedBalance, accountBondedBalance, accountStatus, unlocked
 }: AccountPageHeaderProps) => (
-  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', color: '#FFFFFF', alignItems: 'center' }}>
-    <div style={{ flexBasis: '20%' }}>
+  <div style={{ padding: '0 2%', display: 'flex', flexWrap: 'wrap', color: '#FFFFFF', alignItems: 'center' }}>
+    <div style={{ flexBasis: '33%' }}>
       <BalanceBlock asset="Balance" balance={accountESDBalance} suffix={" GSD"}/>
     </div>
-    <div style={{ flexBasis: '20%' }}>
+    <div style={{ flexBasis: '33%' }}>
       <BalanceBlock asset="Staged" balance={accountStagedBalance}  suffix={" GSD"}/>
     </div>
-    <div style={{ flexBasis: '20%' }}>
+    <div style={{ flexBasis: '33%' }}>
       <BalanceBlock asset="Bonded" balance={accountBondedBalance} suffix={" GSD"} />
     </div>
-    <div style={{ flexBasis: '20%' }}>
+    <div style={{ flexBasis: '50%' }}>
       <BalanceBlock asset="DAO Ownership" balance={ownership(accountESDSBalance, totalESDSSupply)}  suffix={"%"}/>
     </div>
-    <div style={{ flexBasis: '20%' }}>
+    <div style={{ flexBasis: '50%' }}>
       <TextBlock label="Status" text={status(accountStatus, unlocked)}/>
     </div>
   </div>
