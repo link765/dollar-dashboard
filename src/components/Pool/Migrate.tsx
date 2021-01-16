@@ -27,14 +27,16 @@ function Migrate({
   const [claimed, setClaimed] = useState(false);
 
   return (
-    <Box heading="Migrate">
-      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+    <div className="block-section">
+      <Box heading="Migrate">
+      <div className="pool-deposit bond-un-bond" style={{display: 'flex', flexWrap: 'wrap'}}>
         {/* Unbond UNI-V2 within Pool */}
-        <div style={{flexBasis: '32%', paddingTop: '2%'}}>
+        <div style={{flexBasis: '50%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
-            <div style={{width: '60%'}}>
+            <div className="withdraw-deposit-btn" style={{width: '100%'}}>
               <BalanceBlock asset="Bonded" balance={bonded} suffix={"HMDX"} />
               <Button
+                style={{width: '80%'}}
                 wide
                 icon={<IconCircleMinus/>}
                 label="Unbond"
@@ -51,11 +53,12 @@ function Migrate({
           </div>
         </div>
         {/* Withdraw UNI-V2 within Pool */}
-        <div style={{flexBasis: '32%', paddingTop: '2%'}}>
+        <div style={{flexBasis: '50%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
-            <div style={{width: '60%'}}>
+            <div className="withdraw-deposit-btn" style={{width: '100%'}}>
               <BalanceBlock asset="Staged" balance={staged} suffix={"HMDX"} />
               <Button
+                style={{width: '80%'}}
                 wide
                 icon={<IconCircleMinus/>}
                 label="Withdraw"
@@ -72,11 +75,12 @@ function Migrate({
           </div>
         </div>
         {/* Claim ESD within Pool */}
-        <div style={{flexBasis: '32%', paddingTop: '2%'}}>
+        <div style={{flexBasis: '50%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
-            <div style={{width: '60%'}}>
+            <div className="withdraw-deposit-btn" style={{width: '100%'}}>
               <BalanceBlock asset="Claimable" balance={claimable} suffix={"GSD"} />
               <Button
+                style={{width: '80%'}}
                 wide
                 icon={<IconArrowDown/>}
                 label="Claim"
@@ -94,6 +98,7 @@ function Migrate({
         </div>
       </div>
     </Box>
+    </div>
   );
 }
 

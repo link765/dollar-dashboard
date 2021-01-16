@@ -172,7 +172,9 @@ function Pool({ user }: {user: string}) {
 
       {hasLegacyBalance ?
         <>
-          <Header primary={"Legacy Pool Migration"}/>
+          <div className="block-header">
+            <Header primary={"Legacy Pool Migration"}/>
+          </div>
 
           <Migrate
             legacyPoolAddress={getLegacyPoolAddress(poolAddress)}
