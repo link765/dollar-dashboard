@@ -40,19 +40,19 @@ const RegulationHeader = ({
     <>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         <div className="block-section">
-          <Box heading="Supply Allocation">
+          <Box heading="GSD 流通概览">
             <Distribution
               heading={`∅${formatMoney(totalSupply.toNumber())}`}
               items={[
-                { item: 'DAO', percentage: +(ownership(daoTotalSupply, totalSupply).toNumber().toFixed(2)) },
-                { item: 'HecoSwap', percentage: +(ownership(poolTotalSupply, totalSupply).toNumber().toFixed(2)) },
-                { item: 'Circulating', percentage: +(ownership(circulatingSupply, totalSupply).toNumber().toFixed(2)) },
+                { item: 'DAO占比', percentage: +(ownership(daoTotalSupply, totalSupply).toNumber().toFixed(2)) },
+                { item: '流动性占比', percentage: +(ownership(poolTotalSupply, totalSupply).toNumber().toFixed(2)) },
+                { item: '可流通占比', percentage: +(ownership(circulatingSupply, totalSupply).toNumber().toFixed(2)) },
               ]}
             />
           </Box>
         </div>
         <div className="block-section">
-          <Box heading="DAO Breakdown">
+          <Box heading="DAO池阶段状态">
             <Distribution
               heading={`∅${formatMoney(daoTotalSupply.toNumber())}`}
               items={[
@@ -64,7 +64,7 @@ const RegulationHeader = ({
           </Box>
         </div>
         <div className="block-section">
-          <Box heading="HecoSwap Breakdown">
+          <Box heading="LP池状态">
             <Distribution
               heading={`∅${formatMoney(poolTotalSupply.toNumber())}`}
               items={[

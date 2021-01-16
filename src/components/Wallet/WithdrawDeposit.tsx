@@ -28,7 +28,7 @@ function WithdrawDeposit({
 
   return (
     <div className="block-section">
-      <Box heading="Stage">
+      <Box heading="Stage(在该阶段没有分红)">
         {allowance.comparedTo(MAX_UINT256) === 0 ?
             <div className="pool-deposit bond-un-bond" style={{display: 'flex', flexWrap: 'wrap'}}>
               {/* total Issued */}

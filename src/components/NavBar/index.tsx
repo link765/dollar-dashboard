@@ -35,14 +35,14 @@ function NavBar({ hasWeb3, user, setUser }: NavbarProps) {
                   <img src={require("../../assets/img/LOGO2.svg")} height="40px" alt="Galaxy Set Dollar" />
                 </NavLink>
               </div>
-              <LinkButton title="Home" to="/" />
-              <LinkButton title="Wallet" to="/dao/" />
-              <LinkButton title="Liquidity" to="/pool/" />
-              <LinkButton title="Regulation" to="/regulation/" />
+              <LinkButton title="宾至如归" to="/" />
+              <LinkButton title="DAO(单币)" to="/dao/" />
+              <LinkButton title="LP(流动性)" to="/pool/" />
+              <LinkButton title="数据详情" to="/regulation/" />
               {/*<LinkButton title="Governance" to="/governance/" />*/}
-              <LinkButton title="Trade" to="/trade/" />
-              <LinkButton title="Coupons" to="/coupons/" />
-              <a href={'/tools/index.html'} style={{textDecoration:'none', color:'white',fontSize:'22px',fontWeight :'bold'}}>Tools</a>
+              <LinkButton title="我要买币" to="/trade/" />
+              <LinkButton title="优惠券" to="/coupons/" />
+              <a href={'/tools/index.html'} style={{textDecoration:'none', color:'white',fontSize:'22px',fontWeight :'bold'}}>工具</a>
             </div>
           </div>
           <div className="nav-connect-btn" style={{ textAlign: 'right', paddingRight: '10px' }}>

@@ -24,11 +24,11 @@ function Claim({
 
   return (
     <div className="block-section">
-      <Box heading="Claim">
+      <Box heading="Claim(收获奖励GSD)">
         <div className="pool-deposit bond-un-bond" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}
           <div style={{flexBasis: '50%'}}>
-            <BalanceBlock asset="Claimable" balance={claimable} suffix={"GSD"} />
+            <BalanceBlock asset="可提取的GSD" balance={claimable} suffix={"GSD"} />
           </div>
           {/* Deposit UNI-V2 into Pool */}
           <div style={{flexBasis: '50%'}}/>

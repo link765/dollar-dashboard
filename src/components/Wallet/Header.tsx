@@ -18,7 +18,7 @@ type AccountPageHeaderProps = {
 const STATUS_MAP = ["Unlocked", "Locked", "Locked"];
 
 function status(accountStatus, unlocked) {
-  return STATUS_MAP[accountStatus] + (accountStatus === 0 ? "" : " until " + unlocked)
+  return STATUS_MAP[accountStatus] + (accountStatus === 0 ? "" : " 直至第 " + unlocked +'周期')
 }
 
 const AccountPageHeader = ({
@@ -26,19 +26,19 @@ const AccountPageHeader = ({
 }: AccountPageHeaderProps) => (
   <div style={{ padding: '0 2%', display: 'flex', flexWrap: 'wrap', color: '#FFFFFF', alignItems: 'center' }}>
     <div style={{ flexBasis: '33%' }}>
-      <BalanceBlock asset="Balance" balance={accountESDBalance} suffix={" GSD"}/>
+      <BalanceBlock asset="账户余额" balance={accountESDBalance} suffix={" GSD"}/>
     </div>
     <div style={{ flexBasis: '33%' }}>
-      <BalanceBlock asset="Staged" balance={accountStagedBalance}  suffix={" GSD"}/>
+      <BalanceBlock asset="Staged阶段代币" balance={accountStagedBalance}  suffix={" GSD"}/>
     </div>
     <div style={{ flexBasis: '33%' }}>
-      <BalanceBlock asset="Bonded" balance={accountBondedBalance} suffix={" GSD"} />
+      <BalanceBlock asset="Bonded阶段代币" balance={accountBondedBalance} suffix={" GSD"} />
     </div>
     <div style={{ flexBasis: '50%' }}>
-      <BalanceBlock asset="DAO Ownership" balance={ownership(accountESDSBalance, totalESDSSupply)}  suffix={"%"}/>
+      <BalanceBlock asset="你的DAO占比" balance={ownership(accountESDSBalance, totalESDSSupply)}  suffix={"%"}/>
     </div>
     <div style={{ flexBasis: '50%' }}>
-      <TextBlock label="Status" text={status(accountStatus, unlocked)}/>
+      <TextBlock label="状态" text={status(accountStatus, unlocked)}/>
     </div>
   </div>
 );

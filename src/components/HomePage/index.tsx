@@ -27,8 +27,8 @@ async function epochformatted() {
   epochRemainder -= epochHour * hour;
   const epochMinute = Math.floor(epochRemainder / minute);
   epochRemainder -= epochMinute * minute;
-  //return `${epochStr}-0${epochHour}:${epochMinute > 9 ? epochMinute : "0" + epochMinute.toString()}:${epochRemainder > 9 ? epochRemainder : "0" + epochRemainder.toString()}`;
-  return `${epochStr}`;
+  return `${epochStr}-0${epochHour}:${epochMinute > 9 ? epochMinute : "0" + epochMinute.toString()}:${epochRemainder > 9 ? epochRemainder : "0" + epochRemainder.toString()}`;
+  //return `${epochStr}`;
   //return `0-00:00:00`;
 }
 
@@ -75,8 +75,8 @@ function HomePage({user}: HomePageProps) {
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-around' }}>
         <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px'  }}>
           <MainButton
-            title="Wallet"
-            description="Earn rewards for governing"
+            title="DAO(质押GSD)"
+            description="质押GSD赚取GSD"
             icon={<i className="fas fa-dot-circle"/>}
             onClick={() => {
               history.push('/dao/');
@@ -86,8 +86,8 @@ function HomePage({user}: HomePageProps) {
 
         <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px' }}>
           <MainButton
-            title="LP Rewards"
-            description="Earn rewards for providing liquidity."
+            title="LP(质押流动性)"
+            description="质押流动性赚取GSD"
             icon={<i className="fas fa-parachute-box"/>}
             onClick={() => {
               history.push('/pool/');
@@ -97,8 +97,8 @@ function HomePage({user}: HomePageProps) {
 
         <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px' }}>
           <MainButton
-            title="Regulation"
-            description="Network supply regulation statistics."
+            title="数据详情"
+            description="展示各池子数据及周期数据"
             icon={<i className="fas fa-chart-area"/>}
             onClick={() => {
               history.push('/regulation/');
@@ -108,8 +108,8 @@ function HomePage({user}: HomePageProps) {
 
         <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px' }}>
           <MainButton
-              title="Tools"
-              description="Tools for GSD."
+              title="工具"
+              description="展示年化"
               icon={<i className="fas fa-poll"/>}
               onClick={() => {
                 window.location.href='/tools/index.html';
@@ -119,8 +119,8 @@ function HomePage({user}: HomePageProps) {
 
         <div style={{ flexBasis: '45%', overflow: 'hidden' }}>
           <MainButton
-              title="Trade"
-              description="Trade døllar tokens."
+              title="我要买币"
+              description="买卖GSD"
               icon={<i className="fas fa-exchange-alt"/>}
               onClick={() => {
                 history.push('/trade/');
@@ -130,8 +130,8 @@ function HomePage({user}: HomePageProps) {
 
         <div style={{ flexBasis: '45%', overflow: 'hidden'  }}>
           <MainButton
-              title="Coupons"
-              description="Purchase and redeem coupons."
+              title="优惠券"
+              description="低于$1买入，高于$1赎回"
               icon={<i className="fas fa-ticket-alt"/>}
               onClick={() => {
                 history.push('/coupons/');

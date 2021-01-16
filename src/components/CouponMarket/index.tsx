@@ -115,7 +115,7 @@ function CouponMarket({ user }: {user: string}) {
     <>
       <ModalWarning/>
 
-      <IconHeader icon={<i className="fas fa-ticket-alt"/>} text="Coupon Market"/>
+      <IconHeader icon={<i className="fas fa-ticket-alt"/>} text="优惠券市场"/>
 
       <CouponMarketHeader
         debt={debt}
@@ -125,7 +125,7 @@ function CouponMarket({ user }: {user: string}) {
         redeemable={redeemable}
       />
 
-      <Header className="static-header" primary="Purchase" />
+      <Header className="static-header" primary="购买" />
 
       <PurchaseCoupons
         user={user}
@@ -135,7 +135,7 @@ function CouponMarket({ user }: {user: string}) {
       />
 
       <div style={{ display: 'flex' }}>
-        <Header className="static-header" primary="Coupons" />
+        <Header className="static-header" primary="优惠券" />
         <div className="static-header-checkbox" style={{ marginLeft: 'auto', alignSelf: 'flex-end' }}>
           <CheckBox
             text="Hide Redeemed"

@@ -26,19 +26,19 @@ const PoolPageHeader = ({
 }: PoolPageHeaderProps) => (
   <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', color: '#FFFFFF' }}>
     <div style={{ flexBasis: '33%' }}>
-      <BalanceBlock asset="Balance" balance={accountUNIBalance}  suffix={"HMDX"}/>
+      <BalanceBlock asset="LP流动性余额" balance={accountUNIBalance}  suffix={"HMDX"}/>
     </div>
     <div style={{ flexBasis: '33%' }}>
-      <BalanceBlock asset="Rewarded" balance={accountRewardedESDBalance} suffix={" GSD"} />
+      <BalanceBlock asset="已获得奖励" balance={accountRewardedESDBalance} suffix={" GSD"} />
     </div>
     <div style={{ flexBasis: '33%' }}>
-      <BalanceBlock asset="Claimable" balance={accountClaimableESDBalance} suffix={" GSD"} />
+      <BalanceBlock asset="可提取奖励" balance={accountClaimableESDBalance} suffix={" GSD"} />
     </div>
     <div style={{ flexBasis: '50%' }}>
-      <BalanceBlock asset="Pool Ownership" balance={ownership(accountBondedBalance, poolTotalBonded)}  suffix={"%"}/>
+      <BalanceBlock asset="Pool占比" balance={ownership(accountBondedBalance, poolTotalBonded)}  suffix={"%"}/>
     </div>
     <div style={{ flexBasis: '50%' }}>
-      <TextBlock label="Pool Status" text={status(accountPoolStatus, unlocked)}/>
+      <TextBlock label="你的状态" text={status(accountPoolStatus, unlocked)}/>
     </div>
   </div>
 );

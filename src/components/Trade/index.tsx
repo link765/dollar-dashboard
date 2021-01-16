@@ -54,7 +54,7 @@ function UniswapPool({ user }: {user: string}) {
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-around' }}>
         <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px'  }}>
           <MainButton
-            title="Info"
+            title="GSD交易对信息"
             description="View GSD-HUSD pool stats."
             icon={<i className="fas fa-chart-area"/>}
             href={"https://info.mdex.com/#/token/0x03fa282789af9e2574a47024b5ef1f5074ede92f"}
@@ -63,16 +63,16 @@ function UniswapPool({ user }: {user: string}) {
 
         <div style={{ flexBasis: '45%', overflow: 'hidden', marginBottom: '10px' }}>
           <MainButton
-            title="Trade"
+            title="交易GSD"
             description="Trade døllar tokens."
             icon={<i className="fas fa-exchange-alt"/>}
-            href={"https://ht.mdex.com/#/swap?inputCurrency=0x03fa282789af9e2574a47024b5ef1f5074ede92f"}
+            href={"https://ht.mdex.com/#/swap?inputCurrency=0x0298c2b32eae4da002a15f36fdf7615bea3da047&outputCurrency=0x03fa282789af9e2574a47024b5ef1f5074ede92f"}
           />
         </div>
 
         <div style={{ flexBasis: '45%' }}>
           <MainButton
-            title="Supply"
+            title="提供GSD流动性"
             description="Supply and redeem liquidity."
             icon={<i className="fas fa-water"/>}
             href={"https://ht.mdex.com/#/add/0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047/0x03FA282789AF9E2574A47024b5EF1F5074edE92F"}

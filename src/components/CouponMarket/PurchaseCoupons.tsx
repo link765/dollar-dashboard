@@ -40,12 +40,12 @@ function PurchaseCoupons({
 
   return (
     <div className="block-section">
-      <Box heading="Purchase">
+      <Box heading="购买">
         {allowance.comparedTo(MAX_UINT256) === 0 ?
             <div className="pool-deposit bond-un-bond" style={{display: 'flex', flexWrap: 'wrap'}}>
               {/* User balance */}
               <div style={{flexBasis: '50%'}}>
-                <BalanceBlock asset={`Balance`} balance={balance} suffix={" GSD"}/>
+                <BalanceBlock asset={`余额`} balance={balance} suffix={" GSD"}/>
               </div>
               {/* Purchase coupons */}
               <div style={{flexBasis: '100%', paddingTop: '2%'}}>

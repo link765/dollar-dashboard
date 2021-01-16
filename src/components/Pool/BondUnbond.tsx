@@ -28,7 +28,7 @@ function BondUnbond({
 
   return (
     <div className="block-section">
-      <Box heading="Bond">
+      <Box heading="Bond(该阶段有分红且随时可以unbond)">
         <div className="pool-deposit bond-un-bond" style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* Total bonded */}
           <div style={{flexBasis: '50%'}}>
@@ -116,7 +116,7 @@ function BondUnbond({
           </div>
         </div>
         <div style={{width: '100%', paddingTop: '2%', textAlign: 'center'}}>
-          <span style={{ opacity: 0.5 }}> Bonding events will restart the lockup timer </span>
+          <span style={{ opacity: 0.5 }}> 每次进入bond阶段都会重置解锁周期 </span>
         </div>
       </Box>
     </div>

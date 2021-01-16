@@ -121,7 +121,7 @@ function Regulation({ user }: {user: string}) {
       />
 
       <div className="block-header">
-        <Header primary="Regulation History" />
+        <Header primary="触发历史" />
       </div>
 
       <div className="block-section regulation-history">

@@ -58,7 +58,7 @@ function ConnectButton({ hasWeb3, user, setUser }: connectButtonProps) {
   ) : (
     <>
       <ConnectModal visible={isModalOpen} onClose={toggleModal} onConnect={connectWeb3}/>
-      <Button icon={<IconConnect />} label="Connect" onClick={toggleModal} disabled={!hasWeb3}/>
+      <Button icon={<IconConnect />} label="连接钱包" onClick={toggleModal} disabled={!hasWeb3}/>
     </>
   );
 }
