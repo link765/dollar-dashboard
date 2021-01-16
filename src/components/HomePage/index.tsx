@@ -12,24 +12,15 @@ async function epochformatted() {
         getEpoch(ESDS.addr),
         getEpochTime(ESDS.addr),
       ]);
-  //alert(epochStr)
-  //alert(epochTimeStr)
-  const epochStart = 1610452800;
-  const epochPeriod = 2 * 60 * 60;
+  let sec = 1610452800+(parseInt(epochStr)-1)*7200-Math.floor(Date.now() / 1000)
   const hour = 60 * 60;
   const minute = 60;
-  const unixTimeSec = Math.floor(Date.now() / 1000);
 
-  let epochRemainder = unixTimeSec - epochStart
-  const epoch = Math.floor(epochRemainder / epochPeriod);
-  epochRemainder -= epoch * epochPeriod;
-  const epochHour = Math.floor(epochRemainder / hour);
-  epochRemainder -= epochHour * hour;
-  const epochMinute = Math.floor(epochRemainder / minute);
-  epochRemainder -= epochMinute * minute;
-  return `${epochStr}-0${epochHour}:${epochMinute > 9 ? epochMinute : "0" + epochMinute.toString()}:${epochRemainder > 9 ? epochRemainder : "0" + epochRemainder.toString()}`;
-  //return `${epochStr}`;
-  //return `0-00:00:00`;
+  const epochHour = Math.floor(sec / hour);
+  sec -= epochHour * hour;
+  const epochMinute = Math.floor(sec / minute);
+  sec -= (epochMinute * minute);
+  return `${epochStr}-0${epochHour}:${epochMinute > 9 ? epochMinute : "0" + epochMinute.toString()}:${sec}`;
 }
 
 type HomePageProps = {
