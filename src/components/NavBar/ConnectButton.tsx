@@ -36,7 +36,7 @@ function ConnectButton({ hasWeb3, user, setUser }: connectButtonProps) {
     <div style={{display: 'flex'}}>
       <div style={{flex: '1'}}/>
       <div>
-        <Box padding={4} style={{width: '192px'}}>
+        <Box padding={4} style={{width: '192px', background: '#F6F8FF'}}>
           <div style={{display: 'flex'}}>
             <div>
               <LinkBase onClick={disconnectWeb3} style={{marginRight: '8px', height: '24px'}}>

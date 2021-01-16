@@ -31,79 +31,86 @@ function WithdrawDeposit({
     <div className="block-section">
       <Box heading="Stage">
         {allowance.comparedTo(MAX_UINT256) === 0 ?
-            <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            <div className="pool-deposit bond-un-bond" style={{display: 'flex', flexWrap: 'wrap'}}>
               {/* total Issued */}
-              <div style={{flexBasis: '32%'}}>
+              <div style={{flexBasis: '50%'}}>
                 <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"HMDX"}/>
               </div>
               {/* Deposit UNI-V2 into Pool */}
-              <div style={{flexBasis: '33%', paddingTop: '2%'}}>
-                <div style={{display: 'flex'}}>
-                  <div style={{width: '60%', minWidth: '6em'}}>
-                    <>
-                      <BigNumberInput
-                          adornment="HMDX"
-                          value={depositAmount}
-                          setter={setDepositAmount}
-                          disabled={status !== 0}
-                      />
+              <div style={{flexBasis: '100%', paddingTop: '2%'}}>
+                <div>
+                  <div style={{display: 'flex'}}>
+                    <div className="un-bond-input" style={{width: '60%', minWidth: '6em'}}>
+                      <>
+                        <BigNumberInput
+                            adornment="HMDX"
+                            value={depositAmount}
+                            setter={setDepositAmount}
+                            disabled={status !== 0}
+                        />
+                      </>
+                    </div>
+                    <div className="un-bond-max" style={{width: '12%', margin: '0 2%', minWidth: '1em'}}>
                       <MaxButton
                           onClick={() => {
                             setDepositAmount(balance);
                           }}
                       />
-                    </>
-                  </div>
-                  <div style={{width: '40%', minWidth: '7em'}}>
-                    <Button
-                        wide
-                        icon={status === 0 ? <IconCirclePlus/> : <IconLock/>}
-                        label="Deposit"
-                        onClick={() => {
-                          depositPool(
-                              poolAddress,
-                              toBaseUnitBN(depositAmount, UNI.decimals),
-                              (hash) => setDepositAmount(new BigNumber(0))
-                          );
-                        }}
-                        disabled={poolAddress === '' || status !== 0 || !isPos(depositAmount)}
-                    />
+                    </div>
+                    <div className="withdraw-deposit-btn" style={{width: '40%', minWidth: '7em'}}>
+                      <Button
+                          wide
+                          icon={status === 0 ? <IconCirclePlus/> : <IconLock/>}
+                          label="Deposit"
+                          onClick={() => {
+                            depositPool(
+                                poolAddress,
+                                toBaseUnitBN(depositAmount, UNI.decimals),
+                                (hash) => setDepositAmount(new BigNumber(0))
+                            );
+                          }}
+                          disabled={poolAddress === '' || status !== 0 || !isPos(depositAmount)}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-              <div style={{flexBasis: '2%'}}/>
               {/* Withdraw Døllar from DAO */}
-              <div style={{flexBasis: '33%', paddingTop: '2%'}}>
-                <div style={{display: 'flex'}}>
-                  <div style={{width: '60%', minWidth: '6em'}}>
-                    <>
-                      <BigNumberInput
-                          adornment="HMDX"
-                          value={withdrawAmount}
-                          setter={setWithdrawAmount}
-                          disabled={status !== 0}
-                      />
+              <div style={{flexBasis: '100%', paddingTop: '2%'}}>
+                <div>
+                  <div style={{display: 'flex'}}>
+                    <div className="un-bond-input" style={{width: '60%', minWidth: '6em'}}>
+                      <>
+                        <BigNumberInput
+                            adornment="HMDX"
+                            value={withdrawAmount}
+                            setter={setWithdrawAmount}
+                            disabled={status !== 0}
+                        />
+                      </>
+                    </div>
+                    <div className="un-bond-max" style={{width: '12%', margin: '0 2%', minWidth: '1em'}}>
                       <MaxButton
                           onClick={() => {
                             setWithdrawAmount(stagedBalance);
                           }}
                       />
-                    </>
-                  </div>
-                  <div style={{width: '40%', minWidth: '7em'}}>
-                    <Button
-                        wide
-                        icon={status === 0 ? <IconCircleMinus/> : <IconLock/>}
-                        label="Withdraw"
-                        onClick={() => {
-                          withdrawPool(
-                              poolAddress,
-                              toBaseUnitBN(withdrawAmount, UNI.decimals),
-                              (hash) => setWithdrawAmount(new BigNumber(0))
-                          );
-                        }}
-                        disabled={poolAddress === '' || status !== 0 || !isPos(withdrawAmount)}
-                    />
+                    </div>
+                    <div className="withdraw-deposit-btn" style={{width: '40%', minWidth: '6em'}}>
+                      <Button
+                          wide
+                          icon={status === 0 ? <IconCircleMinus/> : <IconLock/>}
+                          label="Withdraw"
+                          onClick={() => {
+                            withdrawPool(
+                                poolAddress,
+                                toBaseUnitBN(withdrawAmount, UNI.decimals),
+                                (hash) => setWithdrawAmount(new BigNumber(0))
+                            );
+                          }}
+                          disabled={poolAddress === '' || status !== 0 || !isPos(withdrawAmount)}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

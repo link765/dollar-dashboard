@@ -42,25 +42,28 @@ function PurchaseCoupons({
     <div className="block-section">
       <Box heading="Purchase">
         {allowance.comparedTo(MAX_UINT256) === 0 ?
-            <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            <div className="pool-deposit bond-un-bond" style={{display: 'flex', flexWrap: 'wrap'}}>
               {/* User balance */}
-              <div style={{flexBasis: '30%'}}>
+              <div style={{flexBasis: '50%'}}>
                 <BalanceBlock asset={`Balance`} balance={balance} suffix={" GSD"}/>
               </div>
-              <div style={{flexBasis: '38%'}}/>
               {/* Purchase coupons */}
-              <div style={{flexBasis: '32%', paddingTop: '2%'}}>
-                <div style={{display: 'flex'}}>
-                  <div style={{width: '60%', minWidth: '6em'}}>
-                    <>
-                      <BigNumberInput
-                          adornment="GSD"
-                          value={purchaseAmount}
-                          setter={(value) => {
-                            setPurchaseAmount(value);
-                            isPos(value) ? updatePremium(value) : updatePremium(new BigNumber(0));
-                          }}
-                      />
+              <div style={{flexBasis: '100%', paddingTop: '2%'}}>
+                <div>
+                  <div style={{display: 'flex'}}>
+                    <div className="un-bond-input" style={{width: '60%', minWidth: '6em'}}>
+                      <>
+                        <BigNumberInput
+                            adornment="GSD"
+                            value={purchaseAmount}
+                            setter={(value) => {
+                              setPurchaseAmount(value);
+                              isPos(value) ? updatePremium(value) : updatePremium(new BigNumber(0));
+                            }}
+                        />
+                      </>
+                    </div>
+                    <div className="un-bond-max" style={{width: '12%', margin: '0 2%', minWidth: '1em'}}>
                       <MaxButton
                           onClick={() => {
                             const maxPurchaseAmount = debt.comparedTo(balance) > 0 ? balance : debt
@@ -68,21 +71,21 @@ function PurchaseCoupons({
                             updatePremium(maxPurchaseAmount);
                           }}
                       />
-                    </>
-                  </div>
-                  <div style={{width: '40%', minWidth: '6em'}}>
-                    <Button
-                        wide
-                        icon={<IconCircleMinus/>}
-                        label="Burn"
-                        onClick={() => {
-                          purchaseCoupons(
-                              ESDS.addr,
-                              toBaseUnitBN(purchaseAmount, ESD.decimals),
-                          );
-                        }}
-                        disabled={user === '' || debt.isZero() || balance.isZero() || !isPos(purchaseAmount)}
-                    />
+                    </div>
+                    <div className="withdraw-deposit-btn" style={{width: '40%', minWidth: '6em'}}>
+                      <Button
+                          wide
+                          icon={<IconCircleMinus/>}
+                          label="Burn"
+                          onClick={() => {
+                            purchaseCoupons(
+                                ESDS.addr,
+                                toBaseUnitBN(purchaseAmount, ESD.decimals),
+                            );
+                          }}
+                          disabled={user === '' || debt.isZero() || balance.isZero() || !isPos(purchaseAmount)}
+                      />
+                    </div>
                   </div>
                 </div>
                 <PriceSection label="Coupons " amt={purchaseAmount.plus(premium)}/>
