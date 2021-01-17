@@ -374,7 +374,7 @@ export const providePool = async (pool, amount, callback) => {
   const account = await checkConnectedAndGetAddress();
   const poolContract = new window.web3.eth.Contract(poolAbi, pool);
   await poolContract.methods
-    .provide(new BigNumber(amount).toFixed())
+    .provide(new BigNumber(amount.toString()).toFixed())
     .send({
       from: account,
     })
