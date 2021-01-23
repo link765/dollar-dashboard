@@ -228,7 +228,7 @@
 <body translate="no">
     <div class="world"></div>
     <div class="haiku">
-        <div style="
+        <!--<div style="
         font-size: 3.5rem;
         font-weight: 800;
         color: #FFFFFF;
@@ -241,26 +241,36 @@
             <div style='float: left; margin-top: 39px; width: 20rem;font-family: W95FA1;'>
                 Galaxy Lab
             </div>
-        </div>
+        </div>-->
         <div style="
         margin-top: 16px;
+        font-size: 3rem;
+        color: #FFFFFF;
+        line-height: 3rem;
+        font-family: Avenir;
+        font-style: italic;
+        font-weight: bold;
+        ">Galaxy Lab
+        </div>
+        <div style="
+        margin-top: 30px;
         font-size: 1.5rem;
         font-weight: 500;
         color: #FFFFFF;
-        line-height: 2rem;
-        padding-left: 4%;
-        font-family: W95FA1;
-        ">Start your first algorithmic stablecoin！
+        line-height: 1.5rem;
+        font-family: Avenir;
+        font-style: italic;
+        ">NFT Will Lanuch
         </div>
-        <div id="countDown" style="
+        <!--<div id="countDown" style="
         margin-top: 16px;
         font-size: 2rem;
         font-weight: 500;
         color: #FFFFFF;
         line-height: 2rem;">Start your first algorithmic stablecoin！
-    </div>
+    </div>-->
 
-        <div style="
+        <!--<div style="
         width: 17rem;
         height: 3.75rem;
         background: #c8c8c8;
@@ -284,12 +294,46 @@
                 </div>
 
             </a>
+        </div>-->
+        <div style="display: flex;justify-content: center;flex-wrap: wrap">
+            <div style="
+            width: 13rem;
+            height: 4rem;
+            background: url('img/gsd.png') no-repeat;
+            background-size: 100%;
+            color: #333333;
+            padding-left: 7rem;
+            font-size: 2rem;
+            line-height: 4rem;
+            margin: 1rem 3rem">
+                Launch GSD
+            </div>
+            <div style="
+            width: 13rem;
+            height: 4rem;
+            background: url('img/ds.png') no-repeat;
+            color: #333333;
+            padding-left: 7rem;
+            font-size: 2rem;
+            line-height: 4rem;
+            margin: 1rem 3rem;
+            background-size: 100%">
+                Launch DS
+            </div>
         </div>
+        <!--count down-->
+        <!--<div style="display: flex;justify-content: center;flex-wrap: wrap">
+            <div style="width: 20rem;"></div>
+            <div style="width: 20rem;display: flex;justify-content: center;padding-left: 3rem">
+                <img src="img/count-down.png" alt="">
+                <div id="countDown" style="margin-left: 5px;font-size: 1.5rem;line-height: 1.5rem"></div>
+            </div>
+        </div>-->
     </div>
     <div class="logo">
         <img style="width: 10rem;height: 1.25rem;margin-right: 16px" src="img/Heco_logo_white.png" />
-        <span>&</span>
-        <img style="width: 5.625rem;height: 1.75rem;margin-left: 16px" src="img/Tron.png" />
+        <!--<span>&</span>
+        <img style="width: 5.625rem;height: 1.75rem;margin-left: 16px" src="img/Tron.png" />-->
     </div>
     <div class="by">
         <img style="width: 2.5rem;height: 2.5rem;margin-right: 12px" src="img/by.png" />
@@ -613,7 +657,7 @@
 
     <script>
           let countDown = document.getElementById('countDown');
-    let endTime = 1610452800000;
+    let endTime = 1611878400000;
     setInterval(function () {
         let now = new Date().getTime();
         let leftTime = endTime - now;
